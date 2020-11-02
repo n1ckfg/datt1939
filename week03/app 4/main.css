@@ -1,0 +1,40 @@
+body {
+  background: #aaaaaa;
+}
+
+#container {
+  width: 1024px;
+  height: 768px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: black;
+}
+
+.photo {
+  width: 1024px;
+  position: absolute;
+  left: 0px;
+  top: 96px;
+}
+
+.nav_tile {
+  width: 342px;
+  height: 576px;
+  position: absolute;
+  top: 96px;
+  border: 1px solid red;
+  z-index: 1;
+}
+
+#LEFT {
+  left:0px;
+}
+
+#FORWARD {
+  left:342px;  
+}
+
+#RIGHT {
+  left:684px;  
+}

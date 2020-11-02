@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<title>Smiley 02</title>
+		<style>
+			body {
+				background: #aaaaaa;
+			}
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+		<script>
+			var img = [];
+
+			function preload() {
+				img.push(loadImage("./images/smiley1.png"));
+				img.push(loadImage("./images/smiley2.png"));
+			}
+
+			function setup() {
+				createCanvas(640, 480);
+				imageMode(CENTER); 
+			}
+
+			function draw() {
+				background(127,0,0);
+				if (mouseIsPressed) {
+					image(img[1], width/2, height/2);
+				} else {
+					image(img[0], width/2, height/2);
+				}  
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

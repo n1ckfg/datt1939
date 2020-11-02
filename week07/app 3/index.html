@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Hello!</title>
+    <style>
+      body {
+        font-size: 14px;
+        background: gray;
+        margin: 1em;
+      }
+      
+      #canvas {
+        border: 1px solid black;
+      }
+    </style>    
+  </head> 
+  
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas><br>
+    <a href="draw.html">draw</a>
+    
+    <script>
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+      let mouseX = mouseY = pmouseX = pmouseY = 0;
+      let mouseIsPressed = false;
+      
+      canvas.addEventListener("mousemove", function(e) { 
+        let cRect = canvas.getBoundingClientRect(); 
+        pmouseX = mouseX;
+        pmouseY = mouseY;
+        mouseX = Math.round(e.clientX - cRect.left);   
+        mouseY = Math.round(e.clientY - cRect.top);   
+      });
+      
+      canvas.addEventListener("mousedown", function(e) {
+        mouseIsPressed = true;
+      });
+      
+      canvas.addEventListener("mouseup", function(e) {
+        mouseIsPressed = false;
+      });
+      
+      setInterval(function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.beginPath();
+        ctx.lineWidth = 20;
+        ctx.fillStyle = "white";
+        ctx.strokeStyle = "green";
+        ctx.rect(0, 0, 40, 40);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.fillStyle = "blue";
+        ctx.strokeStyle = "red";
+        ctx.ellipse(mouseX, mouseY, 10, 10, 0, -Math.PI, Math.PI);
+        ctx.moveTo(mouseX, mouseY);
+        ctx.lineTo(pmouseX, pmouseY);
+        ctx.fill();
+        ctx.stroke();
+
+        let x = Math.random() * 100;
+        let y = Math.random() * 100;
+
+        if (mouseIsPressed) {
+          ctx.beginPath();
+          ctx.lineWidth = 3;
+          ctx.fillStyle = "blue";
+          ctx.strokeStyle = "red";
+          ctx.moveTo(100,100);
+          ctx.lineTo(10,100);
+          ctx.lineTo(10, 10);
+          ctx.lineTo(x, y);
+          ctx.fill();
+          ctx.stroke();
+        }
+      }, (1/60)*1000);
+    </script>
+  </body>
+  
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+    <style>
+      #container {
+        width: 1280px;
+        height: 800px;
+        border: 1px solid red;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background: #aaaaaa;
+      }
+      
+      .tile {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        background: url("https://cdn.glitch.com/fbdb739a-7e06-46aa-8878-54c6b4ff9435%2Famber%20bear.jpg?v=1601501980900");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      
+      #tile1 {
+        border: 1px solid red;
+        left: 10px;
+        top: 100px;
+        background-position:0px 30px;
+      }
+      
+      #tile2 {
+        border: 1px solid blue;     
+        left: 250px;
+        top: 10px;
+        background-position: 50px 0px;
+      }
+    </style>
+	</head>
+
+	<body>
+    <div id="container">     
+      <div class="tile" id="tile1"></div>
+
+      <div class="tile" id="tile2"></div>
+      
+      <a href="scroll.html">page2</a>
+    </div>
+	</body>
+
+</html>

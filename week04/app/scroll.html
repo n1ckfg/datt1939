@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+    <style>
+      body {
+        background: url("https://cdn.glitch.com/fbdb739a-7e06-46aa-8878-54c6b4ff9435%2Fpattern2.png?v=1601504035461");      
+      }
+      
+      #container {
+        width: 3350px;
+        height: 800px;
+        border: 1px solid red;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background: #aaaaaa;
+      }
+      
+      .tile {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        background: url("https://cdn.glitch.com/fbdb739a-7e06-46aa-8878-54c6b4ff9435%2Famber%20bear.jpg?v=1601501980900");
+      }
+      
+      .tile:hover {
+        background: url("https://cdn.glitch.com/fbdb739a-7e06-46aa-8878-54c6b4ff9435%2Famberbear2.jpg?v=1601503513373");
+        opacity: 0.5;
+      }
+      
+      #tile1 {
+        border: 1px solid red;
+        left: 10px;
+        top: 100px;
+        background-position:-0px -30px;
+      }
+      
+      #tile2 {
+        border: 1px solid blue;     
+        left: 0px;
+        top: 5000px;
+        background-position: -50px 0px;
+      }
+      
+      #tile3 {
+        border: 1px solid blue;     
+        left: 3050px;
+        top: 10px;
+        background-position: -50px 0px;
+      }
+    </style>
+	</head>
+
+	<body>
+    <div id="container">     
+        <a href="#tile3"><div class="tile" id="tile1"></div></a>
+
+        <div class="tile" id="tile2"></div>
+
+        <a href="#tile1"><div class="tile" id="tile3"></div></a>
+      </div>
+	</body>
+
+</html>

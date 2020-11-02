@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Hello!</title>   
+    <style>
+      body {
+        font-size: 24px;  
+      }
+      
+      #test {
+        color: red; 
+        position: absolute; 
+        left:10px; 
+        top: 10px;
+        border: 1px solid blue;
+        width: 10em;
+        height: 1em;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="test" onmouseover="example"></div>
+  
+      <script>
+        let test = document.getElementById("test"); 
+        let body = document.getElementsByTagName("body")[0];
+        
+        test.innerHTML = "<b>Hello.</b> <i>World</i>"; 
+        
+        document.addEventListener("click", example1);
+        
+        function example1() {
+          test.innerHTML = "!!!!!";
+          body.style="background:red;";
+        }      
+        
+        function example2() {
+          test.innerHTML = "?????";
+        }     
+    </script>   
+  </body>
+  
+</html>

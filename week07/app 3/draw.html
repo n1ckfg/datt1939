@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Hello!</title>
+    <style>
+      body {
+        font-size: 14px;
+        background: gray;
+        margin: 1em;
+      }
+      
+      #canvas {
+        border: 1px solid black;
+      }
+    </style>    
+  </head> 
+  
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas><br>
+    <a href="image.html">image</a>
+    
+    <script>
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+      let mouseX = mouseY = pmouseX = pmouseY = 0;
+      let mouseIsPressed = false;
+      
+      ctx.beginPath();
+      ctx.fillStyle = "black";
+      ctx.rect(0, 0, canvas.width, canvas.height);
+      ctx.fill();
+      
+      canvas.addEventListener("mousemove", function(e) { 
+        let cRect = canvas.getBoundingClientRect(); 
+        pmouseX = mouseX;
+        pmouseY = mouseY;
+        mouseX = Math.round(e.clientX - cRect.left);   
+        mouseY = Math.round(e.clientY - cRect.top);   
+      });
+      
+      canvas.addEventListener("mousedown", function(e) {
+        mouseIsPressed = true;
+      });
+      
+      canvas.addEventListener("mouseup", function(e) {
+        mouseIsPressed = false;
+      });
+      
+      document.addEventListener("keydown", function(e) {
+        ctx.beginPath();
+        ctx.fillStyle = "black";
+        ctx.rect(0, 0, canvas.width, canvas.height);
+        ctx.fill();        
+      });
+      
+      setInterval(function() {
+        if (mouseIsPressed) {
+          ctx.beginPath();
+          ctx.lineWidth = 2;
+          ctx.fillStyle = "blue";
+          ctx.strokeStyle = "red";
+          ctx.ellipse(mouseX, mouseY, 10, 10, 0, -Math.PI, Math.PI);
+          ctx.moveTo(mouseX, mouseY);
+          ctx.lineTo(pmouseX, pmouseY);
+          ctx.fill();
+          ctx.stroke();
+        }
+      }, (1/60)*1000);
+    </script>
+  </body>
+  
+</html>

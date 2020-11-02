@@ -1,0 +1,66 @@
+body {
+  background: #aaaaaa;
+  font-size: 40px;
+}
+
+a {
+  color: #11aa00;
+  text-decoration: none;
+  cursor: url('https://cdn.glitch.com/297462ef-88ad-43cf-a4e7-872295ea51e9%2Fcursor.png?v=1601048774346'), auto;	 
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active{
+  color: #00aa11;
+  font-style: italic;
+}
+
+.image_class {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+#image_id1 {
+  border: 3px dotted red;
+  left:0px;
+  top:0px;
+}
+
+#image_id1:hover {
+  width:1000px;
+}
+
+#image_id2 {
+  border: 3px dotted green;
+  left:200px;
+  top:0px;
+}
+
+#image_id3 {
+  border: 3px dotted blue;
+  left: 400px;
+  top: 0px;
+}
+
+#image_id3:hover {
+  opacity: 0.3;
+}
+
+#text_box {
+  position:absolute;
+  left: 0px;
+  top: 100px;
+}
+
+#container {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 1024px;
+  height: 768px;
+  border: 2px solid red;
+}

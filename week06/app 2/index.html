@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Hello!</title>   
+    <style>
+      body {
+        background: gray;
+        font-family: helvetica, arial, sans-serif;
+      }
+
+      .box {
+        position: absolute;
+        height: 100px;
+        width: 100px;  
+        border: 1px solid black;
+      }
+        
+      #box1 {
+        left: 10px;
+        top: 10px;
+        background: red;
+      }
+      
+      #box1:hover {
+        background: white;
+      }
+      
+      #box2 {
+        left: 150px;
+        top: 150px;
+        background: blue;
+      }
+    </style>       
+  </head>  
+  
+  <body>
+    <div class="box" id="box1"></div>
+    <a href="page2.html"><div class="box" id="box2"></div></a>
+    
+    <script>
+      let counter = 0;
+
+      let box1 = document.getElementById("box1");
+      let box2 = document.getElementById("box2");
+      let body = document.getElementsByTagName("body")[0];
+      
+      function clickHandler() {
+        counter++;
+        let x = Math.random() * 300;
+        let y = Math.random() * 300;
+        box2.style = "left: " + x + "px; top: " + y + "px;"
+
+        if (counter === 1) {
+          body.style = "background: url('https://cdn.glitch.com/f729e08c-4fc5-4bfb-9f78-f658b12fb54f%2Fbird%20doctors.jpg?v=1603468820011');";
+        } else if (counter === 2) {
+          body.style = "background: url('https://cdn.glitch.com/f729e08c-4fc5-4bfb-9f78-f658b12fb54f%2Fbjork%20flatbed.jpg?v=1603468823218');";
+        } else {
+          body.style = "background: url('https://cdn.glitch.com/f729e08c-4fc5-4bfb-9f78-f658b12fb54f%2Fat%20dawn%20we%20ride.jpg?v=1603468833768');";
+          counter = 0;
+        }    
+      }           
+      
+      box1.addEventListener("click", clickHandler);
+    </script>       
+  </body>
+
+</html>

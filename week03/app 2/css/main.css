@@ -1,0 +1,45 @@
+body { 
+	background: #aaaaaa;
+}
+
+#container {
+	width: 1024px;
+	height: 768px;
+	background: black;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.photo {
+	width: 1024px;
+	position: absolute;
+	top: 96px;
+	left: 0px;
+}
+
+.direction_button {
+	width: 342px;
+	height: 572px;
+	position: absolute;
+}
+
+.direction_button:hover{ 
+	border: 2px dashed yellow;
+	opacity: 0.5;
+}
+
+#LEFT {
+	left: 0px;
+	top: 96px;
+}
+
+#FORWARD {
+	left: 342px;
+	top: 96px;
+}
+
+#RIGHT {
+	left: 684px;
+	top: 96px;
+}

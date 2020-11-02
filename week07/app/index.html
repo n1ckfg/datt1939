@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Hello!</title>
+    <style>
+      body {
+        font-size: 14px;  
+      }
+      
+      .button {
+        width: 100px;
+        height: 100px;
+      }
+      
+      #button1 {
+        background-color: red;
+      }
+      
+      #button2 {
+        background-color: blue;
+      }
+      
+      #output {
+        width: 200px;
+        height: 2em;
+        border: 1px solid red;
+        text-align: center;
+        padding: 0.5em;
+        font-weight: bold;
+      }
+    </style>
+  </head>  
+
+  <body>
+    <div class="button" id="button1"></div>
+    <div class="button" id="button2"></div>
+    <div id="output"></div>
+    
+    <script>
+      let body = document.getElementsByTagName("body")[0];
+      let button1 = document.getElementById("button1");
+      let button2 = document.getElementById("button2");
+      let output = document.getElementById("output");
+      let button1Clicked = false;
+      let button2Clicked = false;
+      
+      button1.addEventListener("click", button1Handler);
+      
+      button2.addEventListener("click", button2Handler);
+      
+      function button1Handler() {
+        output.innerHTML = "Button 1";
+        button1Clicked = true;
+        button1.style = "border: 5px dashed black;";
+      }
+      
+      function button2Handler() {
+        output.innerHTML = "Button 2";        
+        button2Clicked = true;
+        button2.style = "border: 5px dashed black;";
+      }
+      
+      setInterval(function() {
+        console.log("button 1: " + button1Clicked + ", " + "button 2: " + button2Clicked);       
+        if (button1Clicked && button2Clicked) {
+          body.style = "background: green;"
+        }
+      }, 1/60*1000);           
+    </script>
+  </body>
+  
+</html>

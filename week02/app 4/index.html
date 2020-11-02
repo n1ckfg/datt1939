@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* The animation code */
+      @keyframes myName {
+        0%   {background-color: red;}
+        25%  {background-color: yellow;}
+        50%  {background-color: blue;}
+        100% {background-color: green;}
+      }
+
+      @keyframes myName2 {
+        0%   {background-color: red;}
+        25%  {background-color: blue;}
+        50%  {background-color: red;}
+        100% {background-color: blue;}
+      }
+      
+      /* The element to apply the animation to */
+      body {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: myName;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }   
+      
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: myName2;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }  
+    </style>
+  </head>  
+  <body>
+    <img src="https://cdn.glitch.com/8a2c7321-6ad0-4732-9db3-97ed2aba7fa9%2Famber%20bear.jpg?v=1600444299177">
+    <div></div>
+  </body>
+</html>

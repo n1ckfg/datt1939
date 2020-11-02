@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <style>
+      body {
+          background: black;
+      }
+
+      @keyframes myName {
+        0%   {background-image: url("https://cdn.glitch.com/fc71e252-062a-4ede-b0bb-308f31cc9cc1%2Froom1south.png?v=1600899161031");}
+        25%   {background-image: url("https://cdn.glitch.com/fc71e252-062a-4ede-b0bb-308f31cc9cc1%2Froom2west.png?v=1600899162018");}
+        50%   {background-image: url("https://cdn.glitch.com/fc71e252-062a-4ede-b0bb-308f31cc9cc1%2Froom1west.png?v=1600899162057");}
+        100%   {background-image: url("https://cdn.glitch.com/fc71e252-062a-4ede-b0bb-308f31cc9cc1%2Froom1north.png?v=1600899164153");}
+      }
+      
+      #photo {
+        width:800px;
+        height:450px;
+        border: 1px solid red;
+        background-image: url("https://cdn.glitch.com/fc71e252-062a-4ede-b0bb-308f31cc9cc1%2Froom1south.png?v=1600899161031");
+        animation-name: myName;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }   
+    </style>
+  </head>
+  
+  <body>
+    <div id="photo"></div>
+  </body>
+  
+</html>

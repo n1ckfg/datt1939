@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Hello!</title>
+    <style>
+      body {
+        background: gray;
+      }
+      
+      .button {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        position: absolute;
+      }
+      
+      #button1 {
+        background: blue;
+        left: 0px;
+        top: 0px;
+      }
+    </style>
+  </head>  
+  
+  <body>
+    <div class="button" id="button1"></div>
+    
+    <script>    
+      let button1 = document.getElementById("button1");
+      let x = 0;
+      let y = 0;
+      let isClicked = false;
+      
+      button1.addEventListener("click", function() {
+        if (!isClicked) {
+          x = Math.random() * window.innerWidth;
+          y = Math.random() * window.innerHeight;
+          console.log("x: " + x);
+          button1.style = "background: green; left: " + x + "px; top: " + y + "px;"; 
+          isClicked = true;
+        } else {
+          window.location = ("page2.html");
+        }
+      });
+    </script>
+  </body>
+
+</html>

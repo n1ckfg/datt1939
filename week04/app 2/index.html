@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title></title> 
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background: linear-gradient(-180deg, #ADD8E6, #4682B4);
+        font-size: 40px;
+        font-family: "Sansita Swashed";
+      }
+      
+      a:link {
+        color: #581845;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+      
+      #container {
+        width: 1280px;
+        height: 800px;
+        border: 1px solid green;
+      }     
+      
+      .tile {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        background: url("https://cdn.glitch.com/92869f1f-1357-495d-a4fc-e965a6c45f3e%2Famber%20bear.jpg?v=1601651214242");
+        background-repeat: no-repeat;
+      }
+      
+      .tile:hover {
+        background: url("https://cdn.glitch.com/92869f1f-1357-495d-a4fc-e965a6c45f3e%2Famber_bear2.jpg?v=1601653064126");
+        background-repeat: no-repeat;
+      }
+      
+      .tile:active {
+        background: red;
+      }
+      
+      #tile1 {
+        border: 1px solid red;
+        left: 300px;
+        top: 100px;
+        background-position:0px 30px;
+      }
+      
+      #tile2 {
+        border: 1px solid blue;
+        left: 5000px;
+        top: 50px;
+        background-position: 50px 0px;
+      }
+      
+      #skeletor {
+        z-index: 1;
+        position: absolute;
+        
+      }
+      
+      #beetlejuice {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index:2;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="container">     
+      <a href="#tile2"><div class="tile" id="tile1"></div></a>
+      <a href="#tile1"><div class="tile" id="tile2"></div></a>
+      <a href="page2.html">Here is some text.</a>
+    </div>
+  </body>
+  
+</html>

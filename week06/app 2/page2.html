@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Hello!</title>   
+    <style>
+      body {
+        background: black;
+        font-family: helvetica, arial, sans-serif;
+      }
+
+      .box {
+        position: absolute;
+        height: 100px;
+        width: 100px;  
+        border: 1px solid black;
+      }
+
+      #boxL {
+        left: 10px;
+        top: 10px;
+        background: red;
+      }
+
+      #boxL:hover {
+        background: white;
+      }
+      
+      
+      #boxR {
+        left: 120px;
+        top: 10px;
+        background: green;
+      }
+     
+      #boxR:hover {
+        background: white;
+      }     
+      
+      #box2 {
+        left: 150px;
+        top: 150px;
+        background: blue;
+      }
+    </style>       
+  </head>  
+  
+  <body>
+    <div class="box" id="boxL"></div>
+    <div class="box" id="boxR"></div>
+    <a href="index.html"><div class="box" id="box2"></div></a>
+    
+    <script>
+      let deg = 0;
+      
+      let boxL = document.getElementById("boxL");
+      let boxR = document.getElementById("boxR");
+      let box2 = document.getElementById("box2");
+      
+      function clickHandlerL() {
+        deg -= 10;
+        box2.style = ("transform: rotate(" + deg + "deg);");      
+      }           
+      
+      function clickHandlerR() {
+        deg += 10;
+        box2.style = ("transform: rotate(" + deg + "deg);");      
+      }   
+      
+      boxL.addEventListener("click", clickHandlerL);
+      boxR.addEventListener("click", clickHandlerR);
+    </script>       
+  </body>
+
+</html>
