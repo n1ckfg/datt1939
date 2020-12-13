@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background: red;
+        font-size: 16px;
+      }
+      
+      .cubes {
+        width: 100px;
+        height: 100px;
+        position: absolute;        
+      }
+      
+      #cubes1 {
+        left: 100px;
+        top: 100px;
+        z-index: 1;
+      }
+      
+      #cubes2 {
+        left: 100px;
+        top: 500px;        
+      }
+    </style>
+  </head>  
+  <body>
+    <a href="page2.html">page 2</a>
+    <img class="cubes" id="cubes1" src="https://cdn.glitch.com/bc38d950-a125-4fe6-b0fe-d14c62a4c914%2Fcubes.png?v=1604678942424">
+    <img class="cubes" id="cubes2" src="https://cdn.glitch.com/bc38d950-a125-4fe6-b0fe-d14c62a4c914%2Fcubes.png?v=1604678942424">
+  
+    <script>
+    
+      function distance(x1, y1, x2, y2) {
+          return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+      }
+      
+      function lerp(start, end, value){
+          return (1 - value) * start + value * end
+      }
+      
+      let lerpSpeed = 0.005;
+      
+      let body = document.getElementsByTagName("body")[0];
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      let mouseIsPressed = false;
+      let targetX = 500;
+      let targetY = 500;
+      let cubes2X = 0;
+      let cubes2Y = 0;
+
+      let cubes1 = document.getElementById("cubes1");
+      let cubes2 = document.getElementById("cubes2");
+      let cubes1Clicked = false;
+      
+      document.addEventListener("mousemove", function(e) { 
+        mouseX = Math.round(e.clientX );   
+        mouseY = Math.round(e.clientY);
+      });
+      
+      cubes1.addEventListener("mousedown", function(e) {
+        mouseIsPressed = true;
+      });
+      
+      cubes1.addEventListener("mouseup", function(e) {
+        mouseIsPressed = false;
+        cubes1Clicked = !cubes1Clicked;
+      });     
+           
+      setInterval(function(){
+        if (cubes1Clicked) cubes1.style = "left: " + (mouseX-50) + "px; top: " + (mouseY-50) + "px;";
+      
+        let x1 = cubes1.offsetLeft;
+        let y1 = cubes1.offsetTop;
+        let x2 = cubes2.offsetLeft;
+        let y2 = cubes2.offsetTop;
+        let dist = distance(x1, y1, x2, y2); 
+        
+        if (dist < 100) {
+          body.style = "background: green;";
+        } else {
+          body.style = "background: red;";          
+        }
+        
+        cubes2X = lerp(cubes2.offsetLeft, targetX, lerpSpeed);
+        cubes2Y = lerp(cubes2.offsetTop, targetY, lerpSpeed);
+        cubes2.style = "left: " + cubes2X + "px; top: " + cubes2Y + "px;";
+        
+        let dist2 = distance(cubes2.offsetLeft, cubes2.offsetTop, targetX, targetY);
+        if (dist2 < 200) {
+          targetX = Math.random() * 500;
+          targetY = Math.random() * 500;
+        }
+        
+      }, 1/60*1000);
+    </script>
+  </body>
+</html>

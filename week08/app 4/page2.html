@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background: red;
+        font-size: 16px;
+      }
+      
+      .cubes {
+        width: 100px;
+        height: 100px;
+        position: absolute;        
+      }
+      
+      #cubes1 {
+        left: 100px;
+        top: 100px;
+        z-index: 1;
+      }
+    </style>
+    
+    <script src="cubes_class.js"></script>
+  </head>  
+  <body>
+    <a href="page3.html">page 3</a>
+    <img class="cubes" id="cubes1" src="https://cdn.glitch.com/bc38d950-a125-4fe6-b0fe-d14c62a4c914%2Fcubes.png?v=1604678942424">
+  
+    <script>
+    
+      function distance(x1, y1, x2, y2) {
+          return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+      }
+            
+      let body = document.getElementsByTagName("body")[0];
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      let mouseIsPressed = false;
+
+      let cubes1 = document.getElementById("cubes1");
+      
+      // * * * this is now a class defined in cubes_class.js * * *
+      let cubes2 = new Cubes();
+      
+      let cubes1Clicked = false;
+      
+      document.addEventListener("mousemove", function(e) { 
+        mouseX = Math.round(e.clientX );   
+        mouseY = Math.round(e.clientY);
+      });
+      
+      cubes1.addEventListener("mousedown", function(e) {
+        mouseIsPressed = true;
+      });
+      
+      cubes1.addEventListener("mouseup", function(e) {
+        mouseIsPressed = false;
+        cubes1Clicked = !cubes1Clicked;
+      });     
+           
+      setInterval(function(){
+        if (cubes1Clicked) cubes1.style = "left: " + (mouseX-50) + "px; top: " + (mouseY-50) + "px;";
+      
+        let x1 = cubes1.offsetLeft;
+        let y1 = cubes1.offsetTop;
+        let x2 = cubes2.element.offsetLeft;
+        let y2 = cubes2.element.offsetTop;
+        let dist = distance(x1, y1, x2, y2); 
+               console.log(dist);
+        if (dist < 100) {
+          body.style = "background: green;";
+        } else {
+          body.style = "background: red;";          
+        }
+        
+        cubes2.update();
+        
+      }, 1/60*1000);
+    </script>
+  </body>
+</html>

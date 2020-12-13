@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+
+      .box:hover {
+        border: 1px solid black;
+      }
+      
+      .box:active {
+        border: 10px solid black;
+      }
+      
+      #box1 {
+        left: 10px;
+        top: 10px;
+        background-color: red;
+      }
+      
+
+    </style>
+  </head>  
+  <body>
+    <!-- this is an HTML comment -->
+    <div class="box" id="box1"></div>
+     
+    <script>
+      let hasBeenClicked = false;
+      
+      let box1 = document.getElementById("box1");
+      
+      box1.addEventListener("click", function() {
+        hasBeenClicked = true;
+      });
+      
+      // This is a JavaScript comment
+
+      setInterval(function() {
+        if (hasBeenClicked) {
+          box1.style = "background: green;";          
+          window.open("page2.html");
+          hasBeenClicked = false;
+        }
+      }, 1/60*1000);
+
+    </script>
+  </body>
+</html>

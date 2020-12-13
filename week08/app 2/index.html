@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="box" src="https://cdn.glitch.com/abfc7583-d35f-492b-825f-48e40a7baac4%2Ftest.glb?v=1604529422916"></a-asset-item>
+        <a-asset-item id="box2" src="https://cdn.glitch.com/abfc7583-d35f-492b-825f-48e40a7baac4%2Ftest2.glb?v=1604678237153"></a-asset-item>       
+      </a-assets>
+
+      <a-entity gltf-model="#box"></a-entity>
+      <a-entity gltf-model="#box2" position="10 1 -1"></a-entity>
+    </a-scene>
+  </body>
+</html>

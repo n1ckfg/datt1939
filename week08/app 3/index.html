@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+
+      .box:hover {
+        border: 1px solid black;
+      }
+      
+      .box:active {
+        border: 10px solid black;
+      }
+      
+      #box1 {
+        left: 10px;
+        top: 10px;
+        background-color: red;
+      }
+      
+      #box2 {
+        left: 120px;
+        top: 10px;
+        background-color: green;
+      }
+      
+      #box3 {
+        left: 230px;
+        top: 10px;
+        background-color: blue;
+      }
+      
+
+    </style>
+  </head>  
+  <body>
+    <!-- this is an HTML comment -->
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+     
+    <script>
+      let hasBeenClicked1 = false;
+      let hasBeenClicked2 = false;
+      let hasBeenClicked3 = false;
+      let winConditionMet = false;
+      
+      let box1 = document.getElementById("box1");
+      let box2 = document.getElementById("box2");
+      let box3 = document.getElementById("box3");
+      
+      box1.addEventListener("click", function() {
+        hasBeenClicked1 = true;
+      });
+      
+      box2.addEventListener("click", function() {
+        hasBeenClicked2 = true;
+      });
+      
+      box3.addEventListener("click", function() {
+        hasBeenClicked3 = true;
+      });
+      
+      // This is a JavaScript comment
+
+      setInterval(function() {
+        if (hasBeenClicked1) {
+          box1.style = "background: yellow;";          
+        }
+        
+        if (hasBeenClicked2) {
+          box2.style = "background: yellow;";          
+        }
+        
+        if (hasBeenClicked3) {
+          box3.style = "background: yellow;";          
+        }
+        
+        if (hasBeenClicked1 && hasBeenClicked2 && hasBeenClicked3) {
+          hasBeenClicked1 = false;
+          hasBeenClicked2 = false;
+          hasBeenClicked3 = false;
+          winConditionMet = true;
+        }
+        
+        if (winConditionMet) {
+          winConditionMet = false;
+          window.location = "page2.html";
+        }
+      }, 1/60*1000);
+
+    </script>
+  </body>
+</html>
