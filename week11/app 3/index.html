@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheetA2.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <audio autoplay loop src="https://cdn.glitch.com/0825591e-6c9a-4585-b5b6-f79bd4d05a45%2FBG_Test.mp3?v=1606340572708"></audio>
+      
+      <h1 align="center">DAY 1</h1>
+
+      <!-- click through text -->
+      <div class="button" id="buttonContinue">Continue</div>
+      <div id="textbox"></div>
+
+      <!--Activates at nextText10 -->
+      <div class="button" id="buttonOfc">Of course it's me</div>
+      <div class="button" id="buttonMiss">Hey dork</div>
+      <img src="https://cdn.glitch.com/0825591e-6c9a-4585-b5b6-f79bd4d05a45%2Fentrance.jpg?v=1605915883730" alt="entrance" id="background" />
+      <img src="https://cdn.glitch.com/0825591e-6c9a-4585-b5b6-f79bd4d05a45%2Fhappy_a1.png?v=1606342116310" alt="reveal_on_click" id="imagereveal" />
+      <img src="https://cdn.glitch.com/0825591e-6c9a-4585-b5b6-f79bd4d05a45%2Fclosed_happy_a1.png?v=1606342195070" alt="reveal_on_click" id="imagereveal_2" />
+    </div>
+
+    <script>
+      let affection = 0;
+      let nextText = 0;
+      let name ="";
+
+      let buttonContinue = document.getElementById("buttonContinue");
+      let textbox = document.getElementById("textbox");
+      let buttonContinueMessage = "";
+      let buttonContinueClicked =false;
+
+      let buttonOfc = document.getElementById("buttonOfc");
+      let buttonOfcClicked =false;
+
+      let buttonMiss = document.getElementById("buttonMiss");
+      let buttonMissClicked =false;
+
+      //only display continue button, remove it once choices are presented//
+      buttonContinue.style = "display: initial;";
+      buttonOfc.style = "display: none;";   
+      buttonMiss.style = "display: none;";
+      imagereveal.style="display: none;"
+      imagereveal_2.style="display: none;"
+
+
+      //if clicked
+      buttonContinue.addEventListener("click", function() {
+      	console.log("Continue: " + nextText);
+      	buttonContinueClicked = true;
+
+      	switch (nextText) {
+      		case 0:
+      			buttonContinueMessage = "...";
+      			imagereveal.style="display: initial;"
+      			break;
+      		case 1:
+      			buttonContinueMessage = "I can't wait to talk to my friend!";
+      			imagereveal.style="display: initial;"
+      			break;
+      		case 2:
+      			buttonContinueMessage = "It's been a while but I'm just glad that I get to see her";
+      			imagereveal.style="display: none;"
+      			imagereveal_2.style="display: initial;"
+      			break;
+      		case 3:
+      			buttonContinueMessage = "Well, here goes nothing";
+      			break;
+      		case 4:
+      			buttonContinueMessage="*Ding Dong*"
+      			break;
+      		case 5:
+      			buttonContinueMessage="..."
+      			break;
+      		case 6:
+      			buttonContinueMessage="...Did I get the wrong house?"
+      			break;
+  
+
+      		}
+
+
+      	textbox.innerHTML = buttonContinueMessage;
+      	nextText++;
+      	if (nextText > 9999999999) nextText = 0;
+      });
+
+      buttonOfc.addEventListener("click", function() {
+      	console.log("Ofc: " + nextText);
+      	buttonOfcClicked = true;
+
+      	switch (nextText) {
+      		case 10:
+      			buttonContinue.style="display:initial;"
+      			buttonOfc.style="display: none;"
+      			buttonMiss.style="display: none;"
+      			buttonContinueMessage="thats good"
+      			nextText++;
+      			affection++;
+      			break;
+      	}
+      	textbox.innerHTML = buttonContinueMessage;
+      });
+
+      buttonMiss.addEventListener("click", function() {
+      	console.log("Miss: " + nextText);
+      	buttonMissClicked = true;
+
+      	switch (nextText) {
+      		case 10:
+      			buttonContinue.style="display:initial;"
+      			buttonOfc.style="display: none;"
+      			buttonMiss.style="display: none;"
+      			buttonContinueMessage="thats bad"
+      			nextText++;
+      			break;
+      	}
+      	textbox.innerHTML = buttonContinueMessage;
+      });
+
+      //story section
+      setInterval(function() {
+      	if (buttonContinueClicked) {
+      		// animation might go here?
+      	}
+
+      	if (buttonOfcClicked) {
+      		// animation might go here?
+      	}
+
+      	if (buttonMissClicked) {
+      		// animation might go here?
+      	}
+      }, 1/60*1000);
+    </script>
+  </body>
+</html>

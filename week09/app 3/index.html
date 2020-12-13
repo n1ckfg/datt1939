@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background: blue;
+      }
+    </style>
+  </head>  
+  <body>
+    <div id="box"></div>
+    
+    <script>
+      let arrowUp = arrowDown = arrowLeft = arrowRight = false;
+      let spacePressed = false;
+          
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 38) arrowUp = true;
+        if (event.keyCode === 37) arrowLeft = true;
+        if (event.keyCode === 40) arrowDown = true;
+        if (event.keyCode === 39) arrowRight = true;
+        if (event.keyCode === 32) spacePressed = true;
+        //console.log(event.keyCode);
+      });
+
+       window.addEventListener("keyup", function(event) {
+        if (event.keyCode === 38) arrowUp = false;
+        if (event.keyCode === 37) arrowLeft = false;
+        if (event.keyCode === 40) arrowDown = false;
+        if (event.keyCode === 39) arrowRight = false;
+        if (event.keyCode === 32) spacePressed = false;
+        //console.log(event.keyCode);
+      });
+      
+      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+      
+      let body = document.getElementsByTagName("body")[0];
+      let box = document.getElementById("box");
+      
+      setInterval(function() {
+        if (spacePressed) {
+          body.style="background: red;";
+        } else {
+          body.style="background: green;";
+        }
+        
+        let posX = box.offsetLeft;
+        let posY = box.offsetTop;
+
+        if (arrowRight) {
+          posX += 10;
+        } else if (arrowLeft) {
+          posX -= 10;
+        } else if (arrowUp) {
+          posY -= 10;
+        } else if (arrowDown) {
+          posY += 10;
+        }
+
+        box.style = "left: " + posX + "px; top: " + posY + "px;";
+      }, 1/60*1000);
+      
+    </script>
+  </body>
+</html>

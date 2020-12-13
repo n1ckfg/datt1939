@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WONDER</title>
+    <link rel="stylesheet" href="MOVING_CLOUD_BG.css">
+    <link rel="stylesheet" href="style.css">
+    <style>  
+    </style>
+  </head>
+  <body style="background-color: #81BEF7">
+    
+    <!BACKGROUND MUSIC>
+    <audio id="BGmusic" loop autoplay>
+    <source src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2FBACKGROUND_SOUND-WONDER.mp3?v=1606196568380" type="audio/mpeg">
+    </audio>
+    
+    <!CLOUDS>
+    <div class="cloud one">
+    </div>
+    <div class="cloud two">
+    </div>
+    <div class="cloud three">
+    </div>
+    <div class="cloud four">
+    </div>
+    <div class="cloud five">
+    </div>
+    <div class="cloud six">
+    </div>
+    <div class="cloud seven">
+    </div>
+    
+    <!MUTE BUTTON>
+    <div class="position_of_button">
+    <button class="mute_button_style" onclick="mute_or_unmute()" type="button">MUTE</button>
+    </div>
+    
+    <!GROUND>
+    <div class="earth">
+    </div>
+    
+    <!YOUR SCORE>
+    <div id="SCOREBOARD"></div>
+
+    <script src="ALL_JAVASCRIPT.js">
+    </script>
+    
+    <script>
+      let SCOREBOARD = document.getElementById("SCOREBOARD");
+      let points = window.localStorage.getItem("points");
+      point++;
+      SCOREBOARD.innerHTML = points;
+      window.localStorange.setItem("points",points);
+    </script>
+    
+  </body>
+
+</html>
+
+

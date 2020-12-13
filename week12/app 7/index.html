@@ -1,0 +1,253 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>index</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Sail"
+      rel="stylesheet"
+    />
+
+    <!--    <link href='https://fonts.googleapis.com/css?family=Crushed' rel='stylesheet'> -->
+  
+      <style>
+      /* * {
+        margin: 0;
+        padding: 0;
+        font-family: "Courier New", Courier, monospace;
+        box-sizing: border-box;
+      } */
+
+
+
+      body {
+        background: url(
+            https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fintro%403x-100.jpg?v=1606991360472
+          )no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .container2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .container3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      a {
+        position: relative;
+        display: inline-block;
+        padding: 25px 30px;
+        margin: 40px 0;
+        color: rgb(219, 148, 169);
+        font-size: 24px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        letter-spacing: 4px;
+        /* -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);  */
+      }
+
+      a:hover {
+        background: #ffe23e;
+        color: rgb(19, 18, 18);
+        box-shadow: 0 0 5px #f8e539, 0 0 25px #faf881, 0 0 50px #ffe23e,
+          0 0 200px #ffe23e;
+      }
+
+      a span {
+        position: absolute;
+        display: block;
+      }
+
+      a span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #ffe23e);
+        animation: animate1 1s linear infinite;
+      }
+
+      @keyframes animate1 {
+        0% {
+          left: -100%;
+        }
+        50%,
+        100% {
+          left: 100%;
+        }
+      }
+
+      a span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #ffe23e);
+        animation: animate2 2s linear infinite;
+        animation-delay: 0.25s;
+      }
+
+      @keyframes animate2 {
+        0% {
+          top: -100%;
+        }
+        50%,
+        100% {
+          top: 100%;
+        }
+      }
+
+      a span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #ffe23e);
+        animation: animate3 1s linear infinite;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes animate3 {
+        0% {
+          right: -100%;
+        }
+        50%,
+        100% {
+          right: 100%;
+        }
+      }
+
+      a span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #ffe23e);
+        animation: animate4 1s linear infinite;
+        animation-delay: 0.75s;
+      }
+
+      @keyframes animate4 {
+        0% {
+          bottom: -100%;
+        }
+        50%,
+        100% {
+          bottom: 100%;
+        }
+      }
+
+      .title {
+        font-size: 100px;
+        color: rgb(219, 148, 169);
+
+        font-family: "Sail", "Times New Roman", Times, serif;
+        text-align: center;
+        animation: animate 2s linear infinite;
+      }
+      @keyframes animate {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 07;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+    <script>
+      var isMuted = false;
+      function mute_volume() {
+        let muteElement = document.getElementById("Audio");
+        muteElement.volume = 0;
+        isMuted = true;
+      }
+
+      function unmute_volume() {
+        let muteElement = document.getElementById("Audio");
+        muteElement.volume = 1.0;
+        isMuted = false;
+      }
+
+      function mutenomute() {
+        let muteElement = document.getElementById("Audio");
+        if (isMuted) {
+          unmute_volume();
+        } else {
+          mute_volume();
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <audio id="Audio" loop autoplay>
+      <source
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Faudio.mp3?v=1606865560191"
+        type="audio/mpeg"
+      />
+      <!-- Retro Game 01 by Miguel Ángel Zaragozá de León is licensed under CC - BY - 3.0 -->
+    </audio>
+    <div class="mbutton">
+      <button class="mutebutton" onclick="mutenomute()" type="button">
+        MUTE
+      </button>
+    </div>
+    <p class="title">TimTim's First Date!</p>
+    <div class="pagebox">
+      <div class="container">
+        <a href="sleeping.html">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Start
+        </a>
+      </div>
+
+      <div class="container2">
+        <a href="map.html">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Map
+        </a>
+      </div>
+
+      <div class="container3">
+        <a href="statement.html">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+          Statement
+        </a>
+      </div>
+    </div>
+
+    <!-- <div class="statement"><a href="statement1.html"> Statement</a></div> -->
+  </body>
+</html>

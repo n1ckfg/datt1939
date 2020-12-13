@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>HTML5 DOCTYPE tag and page structure with CSS</title>
+
+ <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body style="background-color:#AEDAAA;">
+
+<strong>page 9</strong>
+
+ 
+    <script>
+      
+      let arrowUp = arrowDown = arrowLeft = arrowRight = false;
+      let spacePressed = false;
+          
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 38) arrowUp = true;
+        if (event.keyCode === 37) arrowLeft = true;
+        if (event.keyCode === 40) arrowDown = true;
+        if (event.keyCode === 39) arrowRight = true;
+      });
+
+       window.addEventListener("keyup", function(event) {
+        if (event.keyCode === 38) arrowUp = false;
+        if (event.keyCode === 37) arrowLeft = false;
+        if (event.keyCode === 40) arrowDown = false;
+        if (event.keyCode === 39) arrowRight = false;
+      });
+      
+      
+      
+      let body = document.getElementsByTagName("body")[0];
+      let character = document.getElementById("character9");
+      
+       
+        setInterval(function() {
+       
+        let positionX = character.offsetLeft;
+        let positionY = character.offsetTop;
+        let characterBg = "";
+        
+        if (arrowRight) {
+          positionX += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_right.gif?v=1605722423846');";
+        } else if (arrowLeft) {
+          positionX -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_left.gif?v=1606005767787');";
+        } else if (arrowUp) {
+          positionY -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_up.gif?v=1605722904026');";
+        } else if (arrowDown) {
+          positionY += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_down.gif?v=1605722904027');";
+        }
+
+        character.style = characterBg + "background-size: contain;" + "left: " + positionX + "px; top: " + positionY + "px;";
+      }, 1/30*1000);
+      
+       </script>
+    
+     <div id="character9"> 
+      </div>
+     
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  </head>  
+
+  <body>
+    <script>
+      let counter = 0;
+      let body = document.getElementsByTagName("body")[0];
+
+      document.addEventListener("click", function() {        
+        counter++;
+        console.log(counter);
+      
+        /*
+        if (counter === 1) {
+          body.style = "background: red;";
+        } else if (counter === 2) {
+          body.style = "background: blue";  
+        } else if (counter === 3) {
+          body.style = "background: green";  
+        } else {
+          body.style = "background: white";  
+          counter = 0;
+        }
+        */
+        
+        switch (counter) {
+          case 1:
+            body.style = "background: red;";
+            break;
+          case 2:
+            body.style = "background: blue";
+            break;
+          case 3:
+            body.style = "background: green";  
+            break;
+          default:
+            body.style = "background: white";  
+            counter = 0;
+            break;
+        }
+        
+      });
+      
+    </script>
+  </body>
+
+</html>

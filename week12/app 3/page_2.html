@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    
+    <link rel="stylesheet" href="/style.css">
+    
+    
+    
+    
+    
+  </head>  
+   <body style="background-color:#AEDAAA;">
+   
+        <h1>
+       PAGE 2
+    </h1>
+     
+      
+    <!--portalroom5-->
+     <a href="page_5.html"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fportal.png?v=1606233110270" alt="portal" style="position:absolute; z-index: 1; left: 860px; top: 860px; height: 100px; image-rendering: pixelated; image-rendering: -moz-crisp-edges;image-rendering: crisp-edges;"></a>
+   
+    <div id="character2"> 
+      </div>
+  
+    <div id="room_2">
+    </div>
+
+     <!--portalroom6-->
+     <a href="page_6.html"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fportal.png?v=1606233110270" alt="portal" style="position:absolute; z-index: 1; left: 460px; top: 150px; height: 100px; image-rendering: pixelated; image-rendering: -moz-crisp-edges;image-rendering: crisp-edges;"></a>
+   
+     
+    <!--can-->
+    <a href="#" onclick="grab(); return true;"><img id="can2" src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350" width="100" height="100" alt="can"></a>
+    
+  
+       <div class="cleanpoollarge" style="top:200px;left:300px;"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fclean_pool.png?v=1606095410766" width="400"> </div>
+  
+    
+       <!--can-->
+    <a href="#" onclick="lose(); return true;"> <img id="snake" src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsnake.png?v=1606251545846" width="100" height="100" alt="snake"></a>
+    
+     
+     
+     <script>
+       
+            
+         "use strict";
+
+      
+      <!--can counter (use getCookie() instead of zero on sequential pages)
+      let canCounter = getCookie();
+
+      var pickupindexcan = ""; 
+      var touchbad = ""; 
+      
+       function myMove() {
+  var elem = document.getElementById("animatesnake");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+       
+       
+       
+       
+      function setCookie() {
+      window.localStorage.setItem("cans", canCounter);
+    }
+
+    function getCookie() {  
+      return window.localStorage.getItem("cans");
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+    }
+      
+    function grab() {
+      pickupindexcan="yes";
+      can2.style = "display: none;"
+      canCounter++;
+      setCookie();  
+      console.log(getCookie());
+    }    
+       
+       function lose() {
+      touchbad="yes";
+      snake.style = "display: none;"
+      canCounter = 0;
+      setCookie();  
+      console.log(getCookie());
+    }    
+      
+      <!--character let statements-->
+      let can2 = document.getElementById("can2");
+     
+      let boundaryLeft = 30;
+      let boundaryTop = 30;
+      let boundaryRight = 960;
+      let boundaryBottom = 940;
+     
+      
+      let arrowUp = false;
+      let arrowDown = false;
+      let arrowLeft = false;
+      let arrowRight = false;
+      let spaceBar = false;
+              
+    window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 87) arrowUp = true;
+        if (event.keyCode === 65) arrowLeft = true;
+        if (event.keyCode === 83) arrowDown = true;
+        if (event.keyCode === 68) arrowRight = true;
+        if (event.keyCode === 32) spaceBar = true;
+      });
+
+       window.addEventListener("keyup", function(event) {
+        if (event.keyCode === 87) arrowUp = false;
+        if (event.keyCode === 65) arrowLeft = false;
+        if (event.keyCode === 83) arrowDown = false;
+        if (event.keyCode === 68) arrowRight = false;
+         if (event.keyCode === 32) spaceBar = false;
+      });
+      
+      
+      <!--Character movement>
+      let body = document.getElementsByTagName("body")[0];
+      let character2 = document.getElementById("character2");
+      
+       
+        setInterval(function() {
+       
+        let positionX = character2.offsetLeft;
+        let positionY = character2.offsetTop;
+        let characterBg = "";
+        
+        if (arrowRight) {
+          positionX += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_right.gif?v=1605722423846');";
+        } else if (arrowLeft) {
+          positionX -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_left.gif?v=1606005767787');";
+        } else if (arrowUp) {
+          positionY -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_up.gif?v=1605722904026');";
+        } else if (arrowDown) {
+          positionY += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_down.gif?v=1605722904027');";
+        }
+
+          
+          
+          <!--characterboundarys-->
+            if (positionX < boundaryLeft) {
+            positionX = boundaryLeft;
+          } else if (positionX > boundaryRight) {
+            positionX = boundaryRight;
+          }
+          if (positionY < boundaryTop) {
+            positionY = boundaryTop;
+          } else if (positionY > boundaryBottom) {
+            positionY = boundaryBottom;
+          }
+        
+          
+          <!--can grab if>
+              if (distance(positionX, positionY, can2.offsetLeft, can2.offsetTop) < 50) {
+           grab();
+         }
+          
+           <!--can grab if>
+              if (distance(positionX, positionY, snake.offsetLeft, snake.offsetTop) < 50) {
+           lose();
+         }
+          
+         <!--chacrater animation FINAL--> 
+        character2.style = characterBg + "background-size: contain;" + "left: " + positionX + "px; top: " + positionY + "px;";
+      }, 1/30*1000);
+
+      
+  
+   
+       </script>
+      
+       
+  </body>
+</html>

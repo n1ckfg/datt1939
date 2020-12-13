@@ -1,0 +1,320 @@
+<html>
+  <head>
+    <title>Drive Car</title>
+    <link
+      <link
+      href="https://fonts.googleapis.com/css?family=Crushed"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+           font-family: 'Crushed','monospace', 'san-serif';
+           font-size: 22px;
+      }
+
+      .mbutton {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+      
+      .hide {
+          display: none;
+      }
+
+      .carGame {
+          width: 1280px;
+          height: 800px;
+          background-image: url('https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fb.jpg?v=1606863748913');
+          /* background-repeat: no-repeat; */
+          background-size: 100% 100%;
+
+      }
+
+      .car,
+      .obstacle {
+          width: 50px;
+          height: 70px;
+          background: red;
+          position: absolute;
+          bottom: 120px;
+         background-image: url('https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fcar.png?v=1606863781336');
+          background-size: 100% 100%;
+      }
+
+      .lines {
+          width: 10px;
+          height: 100px;
+          background: white;
+          position: absolute;
+          margin-left: 195px;
+
+
+      }
+
+      .gameArea {
+          width: 400px;
+          height: 800px;
+          background: #1c1e20;
+          margin: auto;
+          position: relative;
+          overflow: hidden;
+          border-right: 7px dashed #c8d6e5;
+          border-left: 7px dashed #c8d6e5;
+      }
+
+      .miles {
+          position: absolute;
+          top: 15px;
+          left: 40px;
+          background: rgb(132, 170, 154);
+          width: 300px;
+          /* height: 70px; */
+          line-height: 70px;
+          text-align: center;
+          color: azure;
+          font-size: 1.5em;
+          font-family: fantasy;
+          box-shadow: 0 5px 5px #777;
+      }
+
+
+      .popUp {
+          position: absolute;
+          background-color: rgb(124, 65, 75);
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          z-index: 1;
+          text-align: center;
+          border: 1px solid #810606;
+          padding: 15px;
+          margin: auto;
+          width: 50%;
+          cursor: pointer;
+          font-family: carfont;
+          letter-spacing: 5;
+          font-size: 20px;
+          word-spacing: 3;
+          line-height: 30px;
+          text-transform: uppercase;
+          box-shadow: 0 5px 5px #777;
+    </style>
+  </head>
+
+  <body>
+    <div class="carGame">
+      <div class="miles"></div>
+      <div class="popUp">
+        <p>
+          Press here to start <br />
+          Arrow keys to move <br />
+          Try not to hit another car. <br />
+          Cross 1500 miles to reach next level.
+        </p>
+      </div>
+      <div class="gameArea"></div>
+    </div>
+    <script>
+      const miles = document.querySelector(".miles");
+      const popUp = document.querySelector(".popUp");
+      const gameArea = document.querySelector(".gameArea");
+
+      console.log(gameArea);
+
+      popUp.addEventListener("click", start);
+
+      let player = { speed: 6, miles: 0 };
+
+      let keys = {
+        ArrowUp: false,
+        ArrowDown: false,
+        ArrowLeft: false,
+        ArrowRight: false
+      };
+      document.addEventListener("keydown", keyDown);
+      document.addEventListener("keyup", keyUp);
+
+      function keyDown(e) {
+        e.preventDefault();
+        keys[e.key] = true;
+        /* //   console.log(e.key); */
+        console.log(keys);
+      }
+      function keyUp(e) {
+        e.preventDefault();
+        keys[e.key] = false;
+        /* //   console.log(e.key); */
+        /* // console.log(e.key); */
+      }
+
+      function isCollide(a, b) {
+        aRect = a.getBoundingClientRect();
+        bRect = b.getBoundingClientRect();
+        return !(
+          aRect.bottom < bRect.top ||
+          aRect.top > bRect.bottom ||
+          aRect.right < bRect.left ||
+          aRect.left > bRect.right
+        );
+      }
+
+      function moveLines() {
+        let lines = document.querySelectorAll(".lines");
+        lines.forEach(function(item) {
+          if (item.y >= 700) {
+            item.y -= 750;
+          }
+
+          item.y += player.speed;
+          item.style.top = item.y + "px";
+        });
+      }
+      function endGame() {
+        player.start = false;
+        popUp.classList.remove("hide");
+        popUp.innerHTML =
+          "Drive Safely <br> You have only crossed " +
+          player.miles +
+          " miles and already have hit cars";
+        ("<br> Press here to restart the Game");
+      }
+      function moveObstacle(car) {
+        let obstacle = document.querySelectorAll(".obstacle");
+        obstacle.forEach(function(item) {
+          if (isCollide(car, item)) {
+            console.log("BOOM HIT");
+            endGame();
+          }
+
+          if (item.y >= 750) {
+            item.y = -300;
+            item.style.left = Math.floor(Math.random() * 350) + "px";
+          }
+
+          item.y += player.speed;
+          item.style.top = item.y + "px";
+        });
+      }
+
+      function gameplay() {
+        if (player.miles - 2 > 1500) {
+          window.location.href = "findGarden.html";
+          console.log("Next level.");
+        } else {
+          /* // console.log("hey, I am clicked"); */
+          let car = document.querySelector(".car");
+          let road = gameArea.getBoundingClientRect();
+          /* // console.log(road); */
+          if (player.start) {
+            moveLines();
+            moveObstacle(car);
+
+            if (keys.ArrowUp && player.y > road.top + 70) {
+              player.y -= player.speed;
+            }
+            if (keys.ArrowDown && player.y < road.bottom - 70) {
+              player.y += player.speed;
+            }
+            if (keys.ArrowLeft && player.x > 0) {
+              player.x -= player.speed;
+            }
+            if (keys.ArrowRight && player.x < road.width - 50) {
+              player.x += player.speed;
+            }
+            car.style.top = player.y + "px";
+            car.style.left = player.x + "px";
+            window.requestAnimationFrame(gameplay);
+            console.log(player.miles++);
+            player.miles++;
+            let pm = player.miles - 2;
+            miles.innerText = "Miles: " + pm;
+          }
+        }
+      }
+      function start() {
+        /* gameArea.classList.remove('hide'); */
+        popUp.classList.add("hide");
+        gameArea.innerHTML = "";
+        player.start = true;
+        player.miles = 0;
+        window.requestAnimationFrame(gameplay);
+
+        for (x = 0; x < 5; x++) {
+          let roadLine = document.createElement("div");
+          roadLine.setAttribute("class", "lines");
+          roadLine.y = x * 150;
+          roadLine.style.top = roadLine.y + "px";
+          gameArea.appendChild(roadLine);
+        }
+
+        let car = document.createElement("div");
+        car.setAttribute("class", "car");
+        /* car.innerText = "hey i m car"; */
+        gameArea.appendChild(car);
+
+        player.x = car.offsetLeft;
+        player.y = car.offsetTop;
+
+        /* console.log("top position" + car.offsetTop); */
+        /* console.log("left positon" + car.offsetLeft); */
+        for (x = 0; x < 3; x++) {
+          let obstacleCar = document.createElement("div");
+          obstacleCar.setAttribute("class", "obstacle");
+          obstacleCar.y = (x + 1) * 350 * -1;
+          obstacleCar.style.top = obstacleCar.y + "px";
+          obstacleCar.style.backgroundColor = randomColor();
+          obstacleCar.style.left = Math.floor(Math.random() * 350) + "px";
+          gameArea.appendChild(obstacleCar);
+        }
+      }
+      function randomColor() {
+        function c() {
+          let hex = Math.floor(Math.random() * 256).toString(16);
+          return ("0" + String(hex)).substr(-2);
+        }
+        return "#" + c() + c() + c();
+      }
+
+      <!-- Start of mute functionality -->
+      var isMuted = false;
+      function mute_volume() {
+        let muteElement = document.getElementById("Audio");
+        muteElement.volume = 0;
+        isMuted = true;
+      }
+
+      function unmute_volume() {
+        let muteElement = document.getElementById("Audio");
+        muteElement.volume = 1.0;
+        isMuted = false;
+      }
+
+      function mutenomute() {
+        let muteElement = document.getElementById("Audio");
+        if (isMuted) {
+          unmute_volume();
+        } else {
+          mute_volume();
+        }
+      }
+      <!-- End of mute functionality -->
+    </script>
+    <audio id="Audio" loop autoplay>
+      <source
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Faudio.mp3?v=1606865560191"
+        type="audio/mpeg"
+      />
+      <!-- Retro Game 01 by Miguel Ángel Zaragozá de León is licensed under CC - BY - 3.0 -->
+    </audio>
+    <div class="mbutton">
+      <button class="mutebutton" onclick="mutenomute()" type="button">
+        MUTE
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>HTML5 DOCTYPE tag and page structure with CSS</title>
+
+ <link rel="stylesheet" href="/style.css">
+
+
+</head>  
+   <body style="background-color:#AEDAAA;">
+    
+        <h1>
+       PAGE 8
+    </h1>
+     
+    <div id="character8"> 
+      </div>
+  
+    <div id="room_8">
+    </div>
+
+      
+    <button onclick="gainCode()" id="message2" src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fenvelope.png?v=1606187358665" width="40" height="25" alt="secret"></button>
+    
+     
+    <!--portalgoback4-->
+     <a href="page_7.html"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fportal2.png?v=1606249943650" alt="portal" style="position:absolute; z-index: 1; left: 100px; top: 400px; height: 100px; image-rendering: pixelated; image-rendering: -moz-crisp-edges;image-rendering: crisp-edges;"></a>
+   
+     
+    <!--can9-->
+    <a href="#" onclick="grab(); return true;"><img id="can9" src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350" width="100" height="100" alt="can"></a>
+ 
+
+<script>
+  "use strict";
+
+     <!--can counter (use getCookie() instead of zero on sequential pages)
+    let canCounter = getCookie();
+
+    var pickupindexcan = ""; 
+
+   
+   
+       function setCookie() {
+      window.localStorage.setItem("cans", canCounter);
+    }
+
+    function getCookie() {  
+      return window.localStorage.getItem("cans");
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+    }
+      
+    function grab() {
+      pickupindexcan="yes";
+      can9.style = "display: none;"
+      canCounter++;
+      setCookie();  
+      console.log(getCookie());
+    }    
+      
+      <!--character let statements-->
+      let can8 = document.getElementById("can8");
+     
+      let boundaryLeft = 30;
+      let boundaryTop = 30;
+      let boundaryRight = 960;
+      let boundaryBottom = 940;
+     
+      
+      let arrowUp = false;
+      let arrowDown = false;
+      let arrowLeft = false;
+      let arrowRight = false;
+      let spaceBar = false;
+              
+     window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 87) arrowUp = true;
+        if (event.keyCode === 65) arrowLeft = true;
+        if (event.keyCode === 83) arrowDown = true;
+        if (event.keyCode === 68) arrowRight = true;
+        if (event.keyCode === 32) spaceBar = true;
+      });
+
+       window.addEventListener("keyup", function(event) {
+        if (event.keyCode === 87) arrowUp = false;
+        if (event.keyCode === 65) arrowLeft = false;
+        if (event.keyCode === 83) arrowDown = false;
+        if (event.keyCode === 68) arrowRight = false;
+         if (event.keyCode === 32) spaceBar = false;
+      });
+      
+      <!--Character movement>
+      let body = document.getElementsByTagName("body")[0];
+      let character8 = document.getElementById("character8");
+      
+       
+        setInterval(function() {
+       
+        let positionX = character8.offsetLeft;
+        let positionY = character8.offsetTop;
+        let characterBg = "";
+        
+        if (arrowRight) {
+          positionX += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_right.gif?v=1605722423846');";
+        } else if (arrowLeft) {
+          positionX -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_left.gif?v=1606005767787');";
+        } else if (arrowUp) {
+          positionY -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_up.gif?v=1605722904026');";
+        } else if (arrowDown) {
+          positionY += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_down.gif?v=1605722904027');";
+        }
+
+          
+          
+          <!--characterboundarys-->
+            if (positionX < boundaryLeft) {
+            positionX = boundaryLeft;
+          } else if (positionX > boundaryRight) {
+            positionX = boundaryRight;
+          }
+          if (positionY < boundaryTop) {
+            positionY = boundaryTop;
+          } else if (positionY > boundaryBottom) {
+            positionY = boundaryBottom;
+          }
+        
+          
+          <!--can grab if>
+              if (distance(positionX, positionY, can9.offsetLeft, can9.offsetTop) < 50) {
+           grab();
+         }
+          
+         <!--chacrater animation FINAL--> 
+        character8.style = characterBg + "background-size: contain;" + "left: " + positionX + "px; top: " + positionY + "px;";
+      }, 1/30*1000);
+
+       function gainCode() {
+       
+    if (x == 1) {
+    alert("Correct.");
+  }
+     else {
+       alert("Incorrect.");
+     }
+}
+  
+   
+       </script>
+      
+       
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <style>
+      body {
+        background: gray;
+        font-size: 18px;
+      }
+
+      #textbox {
+        background: white;
+        width: 200em;
+        height: 2em;
+      }
+    </style>
+  </head> 
+  
+  <body>
+    <div id="textbox"></div>
+    
+    <script>
+      let sourceText = "<i>Dragon: The Bruce Lee Story</i> is a 1993 American biographical drama film directed and co-written by Rob Cohen, and starring Jason Scott Lee (pictured), Lauren Holly, Nancy Kwan and Robert Wagner. The film follows the life of Bruce Lee (Jason) from his relocation to the United States from Hong Kong to his career as a martial arts teacher, and then television and film actor. It also focuses on the relationship between Bruce and his wife Linda Lee (Holly), and the racism to which Bruce was subjected. Rather than making a traditional biographical film, Cohen decided to include elements of mysticism and to dramatise fight scenes to give it the same tone as the films in which Bruce starred. Dragon: The Bruce Lee Story received positive reviews, with Jason widely praised for his performance. The film's commercial success, exceeding box office averages for biographical films, was attributed to its romantic themes and its appeal to people outside the traditional kung fu film audience.";
+      let destText = "";
+      let textbox = document.getElementById("textbox");
+      let counter = 0;
+      let numSteps = 5;
+      let fps = 10;
+      
+      setInterval(function() {
+        if (counter < sourceText.length) {
+          for (let i=0; i<numSteps; i++) {
+            destText += sourceText.charAt(counter);
+            counter++;
+          }
+        }
+        
+        textbox.innerHTML = destText;  
+      }, 1/fps*1000);
+    </script>
+  </body>
+  
+</html>

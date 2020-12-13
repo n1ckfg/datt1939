@@ -1,0 +1,104 @@
+			#container { 
+				position: relative;
+				width: 1000px;
+				margin:auto;
+			}
+			h1{
+				position: absolute;
+				left: 460px;
+				color: purple;
+
+			}
+			body {
+				background: pink;
+			}
+
+			.button {
+				width: 100px;
+				/*height: 50px;*/
+				padding: 10px;
+				position: absolute;
+			}
+
+			#buttonContinue {
+				left: 790px;
+				top: 610px;
+				border-width:5px;
+				border-style: solid ;
+        		border-color: #ff6699;
+        		border-radius: 25px;
+        		font-size:30px
+				background-color:white;
+				text-align: center;
+				color:#ff6696;
+			}
+
+			#buttonOfc{
+				position: absolute;
+				left: 330px;
+				top: 505px;
+				border-width:5px;
+				border-style: solid ;
+        		border-color: #ff6699;
+        		border-radius: 25px;
+        		font-size:30px
+				background: #ffe6ee;
+				text-align: center;
+				color:#ff6696;
+			}
+
+			#buttonMiss {
+				position: absolute;
+				left: 550px;
+				top: 505px;
+				border-width:5px;
+				border-style: solid ;
+        		border-color: #ff6699;
+        		border-radius: 25px;
+       		 	font-size:30px
+				background: #ffe6ee;
+				text-align: center;
+				color:#ff6696;
+			}
+
+			#textbox {
+				position: relative;
+				top: 450px;
+				background:#FFFFFF;
+				color:#b66c85;
+				width: 500px;
+				height: 150px;
+				border-style: solid;
+       			border-width:5px;
+      		    border-color: #ff6699;
+				border-radius: 25px;
+				margin:auto;
+				padding: 30px; 
+				text-align: center;
+				font-size: 20px;
+			}
+			#background{
+				position: relative;
+				left: 250px;
+				top: -110px;
+				width: 500px;
+				height:300px;
+        		border-width:5px;
+				border-style: solid ;
+       			border-color: #ff6699;
+       			border-radius: 25px;
+			}
+			#imagereveal{
+				position: absolute;
+				left: 350px;
+        width:300px;
+        height: 300px;
+				top: 116px;
+			}
+			#imagereveal_2{
+				position: absolute;
+				left: 350px;
+        width:300px;
+        height: 300px;
+				top: 116px;
+			}

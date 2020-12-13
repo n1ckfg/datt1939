@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Congratulations</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Crushed"
+      rel="stylesheet"
+    />
+    <style>
+      a:link {
+        color: #fffefe;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #fff6f6;
+        text-decoration: none;
+      }
+      a:visited {
+        color: #f8f8f8;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: 'Crushed','monospace', 'san-serif';
+        font-size: 22px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Crushed','monospace', 'san-serif';
+        font-size: 22px;
+        /* font-family: monospace, san-serif; */
+      }
+      .hero {
+        width: 1280px;
+        height: 800px;
+
+        background-image: linear-gradient(
+          to top,
+          #3b41c5 0%,
+          #a981bb 49%,
+          #ffc8a9 100%
+        );
+
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        overflow: hidden;
+      }
+      .heart img {
+        width: 150px;
+        animation: heart 7s linear infinite;
+      }
+      .heart {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        bottom: -150px;
+      }
+
+      @keyframes heart {
+        0% {
+          transform: translateY(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        70% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-80vh);
+          opacity: 0;
+        }
+      }
+      .heart img:nth-child(1) {
+        animation-delay: 2s;
+        width: 25px;
+      }
+      .heart img:nth-child(2) {
+        animation-delay: 1s;
+      }
+      .heart img:nth-child(3) {
+        animation-delay: 3s;
+        width: 25px;
+      }
+      .heart img:nth-child(4) {
+        animation-delay: 4.5s;
+        width: 0px;
+      }
+      .heart img:nth-child(5) {
+        animation-delay: 3s;
+      }
+      .heart img:nth-child(6) {
+        animation-delay: 6s;
+        width: 20px;
+      }
+      .heart img:nth-child(7) {
+        animation-delay: 4.5s;
+        width: 35px;
+      }
+      .link {
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+      }
+      
+      .congratulations{
+        font-size: 20px;
+        position: absolute;
+        top: 40%;
+        right: 45%;
+        
+      }
+    </style>
+
+    <script>
+            
+        </script>
+        
+  </head>
+
+  <body>
+    <div class="hero">
+     
+    </div>
+    <div class="link"><a href="index.html"> Play Again </a></div>
+    <div class="congratulations"> <h1>Congratulations</h1>
+        
+         <p> You have made it to the date </p>
+      
+    </div>
+    <div class="heart">
+      <img src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fph.png?v=1606864212710" />
+      <img src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fph.png?v=1606864212710" />
+      <img src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fph.png?v=1606864212710" />
+      <img src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fph.png?v=1606864212710" />
+      <img src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fph.png?v=1606864212710" />
+      <img src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fph.png?v=1606864212710" />
+      <img src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fph.png?v=1606864212710" />
+    </div>
+
+    
+  </body>
+</html>

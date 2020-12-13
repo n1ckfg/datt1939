@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WONDER</title>
+    <link rel="stylesheet" href="MOVING_CLOUD_BG.css">
+    <link rel="stylesheet" href="style.css">
+    <a href="village.html"><br><br><br>village</a>
+    <style>
+      .position_invisible_button_1 {
+        position: absolute;
+        right: 50%;
+        top: 300px;
+        transform: translateX(50%);
+      }
+      .position_invisible_button_2 {
+        position: absolute;
+        right: 100px;
+        top: 450px;
+        transform: translateX(50%);
+      }
+      .earth {
+        width: 100%;
+        height: 200px;
+        background: #3ADF00;
+        position: absolute;
+        border: 0px solid #4ddbff;
+        bottom: 0px;
+        left: 0px;
+        text-align: center;
+        transform: translateY(0%);
+      }
+           
+      #SCOREBOARD_1{
+        border: 2px solid black;
+        color: black;
+        width: 100px;
+        height: 20px;
+        background: #F3E2A9;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-align: center;
+}
+  
+      #character {
+        width: 112px;
+        height: 400px;
+        background: url("https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Fmoving.gif?v=1606441925388");
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body style="background-color: #81BEF7" onload="update_SCOREBOARD(1), init()" onkeydown="getKeyAndMove(event)">
+    
+    <!BACKGROUND MUSIC>
+    <audio id="BGmusic" loop autoplay>
+    <source src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2FBACKGROUND_SOUND-WONDER.mp3?v=1606196568380" type="audio/mpeg">
+    </audio>
+    
+    <!CLOUDS>
+    <div id="cloudcontainer">
+      <div class="cloud one">
+      </div>
+      <div class="cloud two">
+      </div>
+      <div class="cloud three">
+      </div>
+      <div class="cloud four">
+      </div>
+      <div class="cloud five">
+      </div>
+      <div class="cloud six">
+      </div>
+      <div class="cloud seven">
+      </div>
+    </div>
+    
+    <!MUTE BUTTON>
+    <div class="position_of_button">
+    <button class="mute_button_style" onclick="mute_or_unmute()" type="button">MUTE</button>
+    </div>
+    
+    <!GROUND>
+    <div class="earth">
+    </div>
+
+    <!DOOR BUTTON>
+    <div class="position_invisible_button_1">
+    <button class="invisible_button" onclick="password_link('statement.html',0,flag1,'ENTER PASSWORD: ')" type="button"></button>
+    </div>
+    
+    <!SECRET ENTRANCE BUTTON>
+    <div class="position_invisible_button_2">
+    <button class="invisible_button" onclick="password_link('AREA_1.html','YES',flag1,'SHOULD I SNEAK IN? (YES/NO)')" type="button"></button>
+    </div>
+    
+    <!YOUR SCORE>
+    <div id="SCOREBOARD_1"></div>
+    
+    <!CHARACTER>
+    <div id="character"></div>
+    <script src="ALL_JAVASCRIPT.js">
+
+    </script>
+    
+
+      </body>
+
+</html>
+
+
+

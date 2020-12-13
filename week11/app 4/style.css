@@ -1,0 +1,90 @@
+.position_of_button {
+  /*MUTE BUTTON*/
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.position_of_button_2 {
+  /*PLAY BUTTON on ANIMAL GAME*/
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+.position_of_button_3 {
+  /*BACK BUTTON*/
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.mute_button_style {
+  border: 10px bold black;
+  color: black;
+  background-color: yellow;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  font-family: Courier;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+.play_button_style {
+  border: 10px bold black;
+  color: black;
+  background-color: #FF0000;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80px;
+  font-family: Courier;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+.back_button_style {
+  border: 20px bold black;
+  color: #0174DF;
+  background-color: #81F7F3;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  font-family: Courier;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+.invisible_button {
+  border: none;
+  color: transparent;
+  background-color: red; /*change backgound-color to transparent for it to be hidden*/
+  padding: 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 0px 0px;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+}
+#SCOREBOARD{
+  border: 2px solid black;
+  color: black;
+  width: 100px;
+  height: 20px;
+  background: #F3E2A9;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+}
+.TEXT_STYLE {
+  /*ANIMAL GAME TEXT*/
+  font-size: 20px;
+  font-family: Courier;
+  color: #61210B;
+  font-weight: bold;
+  padding: 20px;
+}

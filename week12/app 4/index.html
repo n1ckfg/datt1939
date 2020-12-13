@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheetA2.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <audio id="audio" src="https://cdn.glitch.com/0825591e-6c9a-4585-b5b6-f79bd4d05a45%2FBG_Test.mp3?v=1606340572708"></audio>
+      
+      <h1 align="center">DAY 1</h1>
+
+      <!-- click through text -->
+      <div class="button" id="buttonContinue">Continue</div>
+      <div id="textbox"></div>
+
+      <!--Activates at buttonCounter10 -->
+      <div class="button" id="buttonGood">Pretty Good</div>
+      <div class="button" id="buttonBad">It's been eh</div>
+
+      <div class="button" id="buttonDanger">Isn't that dangerous</div>
+      <div class="button" id="buttonHow">How long did it take to make?</div>
+
+      <div class="button" id="buttonYes">Sure, why not.</div>
+      <div class="button" id="buttonNo">Nope, no thank you</div>
+
+      <div class="button" id="buttonTease">Wait, you're actually good at magic?</div>
+      <div class="button" id="buttonComp">That's amazing Clara!</div>
+
+      <img src="https://cdn.glitch.com/0825591e-6c9a-4585-b5b6-f79bd4d05a45%2Fentrance.jpg?v=1605915883730" alt="entrance" id="background" />
+      <img src="https://cdn.glitch.com/0825591e-6c9a-4585-b5b6-f79bd4d05a45%2Fhappy_a1.png?v=1606342116310" alt="reveal_on_click" id="imagereveal" />
+      <img src="https://cdn.glitch.com/0825591e-6c9a-4585-b5b6-f79bd4d05a45%2Fclosed_happy_a1.png?v=1606342195070" alt="reveal_on_click" id="imagereveal_2" />
+    </div>
+
+    <script>
+      let audio = document.getElementById("audio");
+      audio.volume = 0.15;
+      audio.loop = true;
+      audio.play();
+      
+      let affection = 0;
+      
+      let buttonContinueCounter = 0;
+      let buttonGoodCounter = 0;
+      let buttonBadCounter = 0;
+      let buttonHowCounter = 0;
+      let buttonYesCounter = 0;
+      let buttonNoCounter = 0;
+      let buttonTeaseCounter = 0;
+      let buttonCompCounter = 0;
+      
+      let name ="";
+
+      let buttonContinue = document.getElementById("buttonContinue");
+      let textbox = document.getElementById("textbox");
+      let buttonContinueMessage = "";
+      let buttonContinueClicked =false;
+
+      let buttonGood = document.getElementById("buttonGood");
+      let buttonGoodClicked =false;
+      let buttonBad = document.getElementById("buttonBad");
+      let buttonBadClicked =false;
+
+      let buttonDanger = document.getElementById("buttonDanger");
+      let buttonDangerClicked =false;
+      let buttonHow = document.getElementById("buttonHow");
+      let buttonHowClicked =false;
+
+      let buttonYes = document.getElementById("buttonYes");
+      let buttonYesClicked =false;
+      let buttonNo = document.getElementById("buttonNo");
+      let buttonNoClicked =false;
+
+      let buttonTease = document.getElementById("buttonTease");
+      let buttoneTeaseClicked =false;
+      let buttonComp = document.getElementById("buttonComp");
+      let buttonCompClicked =false;
+
+
+      //only display continue button, remove it once choices are presented//
+      buttonContinue.style = "display: initial;";
+     
+      buttonGood.style = "display: none;";   
+      buttonBad.style = "display: none;";
+
+       buttonDanger.style = "display: none;";   
+      buttonHow.style = "display: none;";
+
+       buttonYes.style = "display: none;";   
+      buttonNo.style = "display: none;";
+
+       buttonTease.style = "display: none;";   
+      buttonComp.style = "display: none;";
+
+      imagereveal.style="display: none;"
+      imagereveal_2.style="display: none;"
+
+
+      //if clicked
+      buttonContinue.addEventListener("click", function() {
+        console.log("Continue: " + buttonContinueCounter);
+        buttonContinueClicked = true;
+
+        switch (buttonContinueCounter) {
+          case 0:
+            buttonContinueMessage = "...";
+            imagereveal.style="display: initial;"
+            break;
+          case 1:
+            buttonContinueMessage = "Ah, hold on for a moment! Ill be right there!";
+            imagereveal.style="display: initial;"
+            break;
+          case 2:
+            buttonContinueMessage = "Just let me fix some things and I’ll get right to ya";
+            imagereveal.style="display: none;"
+            imagereveal_2.style="display: initial;"
+            break;
+          case 3:
+            buttonContinueMessage = "Aaaaand there we go! Everythings ready!";
+            break;
+          case 4:
+            buttonContinueMessage="Sorry for the wait Alex!"
+            break;
+          case 5:
+            buttonContinueMessage="it’s been a while since we last had our chats and I really wanted to tell you everything that’s happened! "
+            break;
+          case 6:
+            buttonContinueMessage="Well, come on in, I have snacks prepared and everything"
+            break;
+          case 7:
+            buttonContinueMessage="Welcome to my little home, It’s a bit messy at the moment, but I did everything to keep everything the same as you left it"
+            break;
+          case 8:
+            buttonContinueMessage="So then, how’s life treating ya?"
+            break;
+          case 9:
+            buttonContinueMessage=""
+      buttonContinue.style="display:none;"
+      buttonGood.style="display: initial;"
+      buttonBad.style="display: initial;"
+            break;
+          case 10:
+            buttonContinueMessage="As for me, well, alot has happened."
+            break;
+          case 11:
+            buttonContinueMessage=" But I wanna save that surprise for later. Now then, lets move onto the subject of snacks! I made some sweets for ya while waiting for you, I even have some new ~experimental~  surprise flavors I want you to try! I used the weirdest spells I can think of to give it some oomf."
+            break;
+          case 12:
+            buttonContinueMessage="I haven’t tried them myself, but that’s what makes it a surprise! So wanna try?"
+            break;
+          case 13:
+            buttonContinueMessage=""
+      buttonContinue.style="display:none;"
+      buttonDanger.style="display: initial;"
+      buttonHow.style="display: initial;"
+            break;
+          case 14:
+            buttonContinueMessage="Come on! Try it!"
+            break;
+          case 15:
+            buttonContinueMessage="It's Macaroons! you're favourite!"
+            break;
+          case 16:
+            buttonContinueMessage=""
+              buttonContinue.style="display:none;"
+            buttonYes.style="display: initial;"
+            buttonNo.style="display: initial;"
+            break;
+          case 17:
+            buttonContinueMessage="Anyways let me tell you some good news"
+            break;
+          case 18:
+            buttonContinueMessage="Recently I’ve been accepted as an apprentice for this cool wizard!"
+            break;
+          case 19:
+            buttonContinueMessage="He said he will help pay off my student loans once I graduate and I’m so excited!"
+            break;
+          case 20:
+            buttonContinueMessage="It’s finally nice to have someone understand my skills!"
+            break;
+           case 21:
+                buttonContinueMessage=""
+              buttonContinue.style="display:none;"
+            buttonTease.style="display: initial;"
+            buttonComp.style="display: initial;"
+             break;
+           case 22: 
+           buttonContinueMessage="He also said that my pro-"
+             break;
+           case 23: 
+           buttonContinueMessage="*ring Ring*"
+             break;
+  
+      case 24: 
+           buttonContinueMessage="Wait let me just check this hold on"
+             break;
+  
+        case 25: 
+           buttonContinueMessage="..."
+             break;
+        case 26: 
+           buttonContinueMessage="Oh no"
+             break;
+        case 27: 
+           buttonContinueMessage="So ummm, I might have accidently set back my smart scroll an hour back and now I’m running late for class"
+             break;
+            case 28:
+              buttonContinueMessage="I know this sudden but I gotta go!"
+             break;
+              case 29:
+              if (affection>3){
+                buttonContinueMessage="We can talk tomorrow ok! I really wanna tell you what’s going on!"
+              }
+              else{
+                buttonContinueMessage="We can meet later this month when I’m finished my surprise, since you're a bit grumpier than usual."
+              }
+             break;
+              case 30:
+              buttonContinueMessage="I’m sorry but I want to keep perfect attendance!"
+             break;
+              case 31:
+              buttonContinueMessage="byeeeeeeeeeeeeeeeeeeeeeeeeeee"
+             break;
+  
+  
+
+          }
+
+
+        textbox.innerHTML = buttonContinueMessage;
+        buttonContinueCounter++;
+        if (buttonContinueCounter > 9999999999) buttonContinueCounter = 0;
+      });
+
+      buttonGood.addEventListener("click", function() {
+        console.log("Ofc: " + buttonGoodCounter);
+        buttonGoodClicked = true;
+
+        switch (buttonGoodCounter) {
+          case 0:
+            buttonContinue.style="display:initial;"
+            buttonGood.style="display: none;"
+            buttonBad.style="display: none;"
+            buttonContinueMessage="Well that’s good to hear, nice to see that you’ve been taking care of yourself for once"
+            buttonGoodCounter++;
+            affection++;
+            break;
+        }
+        textbox.innerHTML = buttonContinueMessage;
+      });
+
+      buttonBad.addEventListener("click", function() {
+        console.log("Miss: " + buttonBadCounter);
+        buttonBadClicked = true;
+
+        switch (buttonBadCounter) {
+          case 0:
+            buttonContinue.style="display:initial;"
+            buttonGood.style="display: none;"
+            buttonBad.style="display: none;"
+            buttonContinueMessage="Well if you wanna vent to me, then I’ll be here for ya bud."
+            buttonBadCounter++;
+            break;
+        }
+        textbox.innerHTML = buttonContinueMessage;
+      });
+
+        buttonDanger.addEventListener("click", function() {
+        console.log("Ofc: " + buttonDangerCounter);
+        buttonDangerClicked = true;
+
+        switch (buttonDangerCounter) {
+          case 0:
+            buttonContinue.style="display:initial;"
+            buttonDanger.style="display: none;"
+            buttonHow.style="display: none;"
+            buttonContinueMessage="So what if it’s dangerous, It’s still edible, right? (well at least I think it’s edible)"
+            buttonDangerCounter++;
+            break;
+        }
+        textbox.innerHTML = buttonContinueMessage;
+      });
+
+      buttonHow.addEventListener("click", function() {
+        console.log("Miss: " + buttonHowCounter);
+        buttonHowClicked = true;
+
+        switch (buttonHowCounter) {
+          case 0:
+            buttonContinue.style="display:initial;"
+            buttonDanger.style="display: none;"
+            buttonHow.style="display: none;"
+            buttonContinueMessage="ehhhh about a couple days if you count all the failures (and the time I spent remodelling the kitchen), but I’m sure this ones going to work!"
+            buttonHowCounter++;
+            affection++;
+            break;
+        }
+        textbox.innerHTML = buttonContinueMessage;
+      });
+
+      buttonYes.addEventListener("click", function() {
+        console.log("Ofc: " + buttonYesCounter);
+        buttonYesClicked = true;
+
+        switch (buttonYesCounter) {
+          case 0:
+            buttonContinue.style="display:initial;"
+            buttonYes.style="display: none;"
+            buttonNo.style="display: none;"
+            buttonContinueMessage="Great! now say AAAAAAAAA"
+          buttonYesCounter++;
+          affection++;
+            break;
+          case 1:
+            buttonContinueMessage="..."
+            break;
+          case 2:
+            buttonContinueMessage="Well you’re still alive, so I’m guessing it's ok!"
+            break;
+        }
+        textbox.innerHTML = buttonContinueMessage;
+      });
+
+      buttonNo.addEventListener("click", function() {
+        console.log("Miss: " + buttonNoCounter);
+        buttonNoClicked = true;
+
+        switch (buttonNoCounter) {
+          case 0:
+            buttonContinue.style="display:initial;"
+            buttonYes.style="display: none;"
+            buttonNo.style="display: none;"
+            buttonContinueMessage="Ughhhhhh come one dude, I spent days on this, are you seriously not gonna eat this?"
+            buttonNoCounter++;
+            break;
+          case 1:
+            buttonContinueMessage="..."
+            break;
+          case 2:
+            buttonContinueMessage="Fine, but as punishment, I'm not making sweets for you for a week!"
+            break;
+        }
+        textbox.innerHTML = buttonContinueMessage;
+      });
+
+      buttonTease.addEventListener("click", function() {
+        console.log("Ofc: " + buttonTeaseCounter);
+        buttoneTeaseClicked = true;
+
+        switch (buttonTeaseCounter) {
+          case 0:
+            buttonContinue.style="display:initial;"
+            buttonTease.style="display: none;"
+            buttonComp.style="display: none;"
+            buttonContinueMessage="Ha ha, very funny. Anyways that’s not the point."
+            buttonTeaseCounter++;
+            break;
+        }
+        textbox.innerHTML = buttonContinueMessage;
+      });
+
+      buttonComp.addEventListener("click", function() {
+        console.log("Miss: " + buttonCompCounter);
+        buttonCompClicked = true;
+
+        switch (buttonCompCounter) {
+          case 27:
+            buttonContinue.style="display:initial;"
+            buttonTease.style="display: none;"
+            buttonComp.style="display: none;"
+            buttonContinueMessage="I know right!!! Once I finishing suffering through Magia University I have my whole live planned ahead of me!"
+            buttonCompCounter++;
+            affection++;
+            break;
+        }
+        textbox.innerHTML = buttonContinueMessage;
+      });
+      //story section
+      /*
+      setInterval(function() {
+        if (buttonContinueClicked) {
+          // animation might go here?
+        }
+
+        if (buttonGoodClicked) {
+          // animation might go here?
+        }
+
+        if (buttonBadClicked) {
+          // animation might go here?
+        }
+      }, 1/60*1000);
+      */
+    </script>
+  </body>
+</html>

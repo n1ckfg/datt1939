@@ -1,0 +1,33 @@
+html {
+
+    }
+
+body {
+  margin: 0px;
+}
+
+#container {
+    background-image:url('https://cdn.glitch.com/e13da1d0-ddb8-4527-941f-e4ebfad5e51e%2Fhome.jpeg?v=1607094598661');
+    background-repeat: no-repeat;  
+    width: 1080px;
+    height: 844px;
+    background-size: contain;
+}
+
+a {
+  color: black;
+}
+
+#statement{
+    position: absolute;
+    top:703px;
+    left: 190px;
+    color: black
+}
+
+#start{
+    position: absolute;
+    top:703px;
+    left: 800px;
+    color: black
+}

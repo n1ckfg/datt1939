@@ -1,0 +1,927 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+#character {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+  left: 350px;
+  top: 500px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character2 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+  left: 100px;
+  top: 100px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character3 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+  left: 70px;
+  top: 100px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character4 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+  left: 100px;
+  top: 100px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character5 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
+  left: 100px;
+  top: 100px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character6 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
+  left: 100px;
+  top: 100px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character7 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
+  left: 500px;
+  top: 100px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character8 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
+  left: 300px;
+  top: 500px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character9 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
+  left: 500px;
+  top: 1800px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character10 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
+  left: 340px;
+  top: 550px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character11 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
+  left: 100px;
+  top: 100px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#character12 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_idle.gif?v=1605722423846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3;
+  left: 900px;
+  top: 900px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+
+#door {
+  position: absolute;
+  left: 500px;
+  top: 300px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#small_room {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsmaller_room1.png?v=1606188942758);
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50px;
+  top: 10px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#trigger {
+  width: 60px;
+  height: 40px;
+  background-color: red;
+  position: absolute;
+  left: 70px;
+  top: 150px;
+}
+
+.pool {
+  background-image: url (https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fgrime_pool.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.cleanpoollarge {
+  background-image: url (https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fclean_pool.png?v=1606095410766);
+  background-repeat: no-repeat;
+  background-size: 600px 600px;
+  height: 600px;
+  width: 600px;
+  position: absolute;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_index {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsmaller_room1.png?v=1606188942758);
+  background-repeat: no-repeat;
+  background-size: 700px 700px;
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  width: 35px;
+  height: 20px;
+  position: absolute;
+  left: 500px;
+  top: 200px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can2 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 25px;
+  position: absolute;
+  left: 500px;
+  top: 560px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_3 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fnarrow_room1.png?v=1606185444474);
+  background-repeat: no-repeat;
+  background-size: 1000px 300px;
+  width: 1000px;
+  height: 300px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can3 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 35px;
+  height: 20px;
+  position: absolute;
+  left: 600px;
+  top: 80px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_2 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsquare_room1.png?v=1606185444474);
+  background-repeat: no-repeat;
+  background-size: 1000px 1000px;
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_4 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsmaller_room1.png?v=1606188942758);
+  background-repeat: no-repeat;
+  background-size: 800px 800px;
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_5 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fnarrow_room1.png?v=1606185444474);
+  background-repeat: no-repeat;
+  background-size: 2500px 500px;
+  width: 2500px;
+  height: 500px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can5 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 35px;
+  height: 20px;
+  position: absolute;
+  left: 1000px;
+  top: 80px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_6 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsquare_room1.png?v=1606185444474);
+  background-repeat: no-repeat;
+  background-size: 700px 700px;
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#flower {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fflower.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 35px;
+  height: 20px;
+  position: absolute;
+  left: 1000px;
+  top: 80px;
+  z-index: 1;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can6 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fpaperball.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 470px;
+  top: 370px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_7 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsquare_room1.png?v=1606185444474);
+  background-repeat: no-repeat;
+  background-size: 900px 900px;
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can7 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fpaperball.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 570px;
+  top: 770px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can8 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fpaperball.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 70px;
+  top: 570px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.dirtypoollarge {
+  background-image: url (https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fgrime_pool.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 600px 600px;
+  height: 600px;
+  width: 600px;
+  position: absolute;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_8 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsmaller_room1.png?v=1606188942758);
+  background-repeat: no-repeat;
+  background-size: 600px 600px;
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can9 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 35px;
+  height: 25px;
+  position: absolute;
+  left: 300px;
+  top: 370px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+
+
+#room_9 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fnarrow_room2.png?v=1606185539826);
+  background-repeat: no-repeat;
+  background-size: 1000px 2000px;
+  width: 1000px;
+  height: 2000px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can10 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 35px;
+  height: 25px;
+  position: absolute;
+  left: 500px;
+  top: 1600px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can11 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 35px;
+  height: 25px;
+  position: absolute;
+  left: 500px;
+  top: 1300px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can12 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 35px;
+  height: 25px;
+  position: absolute;
+  left: 500px;
+  top: 1000px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can12 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 35px;
+  height: 25px;
+  position: absolute;
+  left: 500px;
+  top: 1000px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#ground {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fdialogue_box.png?v=1606323484490);
+  background-repeat: no-repeat;
+  background-size: 350px 250px;
+  width: 350px;
+  height: 250px;
+  position: absolute;
+  left: 350px;
+  top: 300px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_10 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsmaller_room1.png?v=1606188942758);
+  background-repeat: no-repeat;
+  background-size: 700px 700px;
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can13 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fpaperball.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 50px;
+  top: 560px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can14 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fpaperball.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 440px;
+  top: 300px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can15 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fpaperball.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 440px;
+  top: 580px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#room_11 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsquare_room1.png?v=1606185444474);
+  background-repeat: no-repeat;
+  background-size: 900px 900px;
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#button {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fenvelope.png?v=1606187358665);
+  background-repeat: no-repeat;
+  background-size: 50px 40px;
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  left: 290px;
+  top: 200px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#title {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Ftitle.png?v=1606590696715);
+  background-repeat: no-repeat;
+  background-size: 300px 126px;
+  width: 300px;
+  height: 126px;
+  position: absolute;
+  left: 210px;
+  top: 260px;
+  z-index: 1;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#title2 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Ftitle.png?v=1606590696715);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 400px;
+  height: 168px;
+  position: absolute;
+  left: 260px;
+  top: 5px;
+  z-index: 4;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#arrow {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 70px;
+  top: 68px;
+  z-index: 4;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#arrow:hover {
+animation-name: blinking;
+animation-duration: 0.5s;
+animation-iteration-count: infinite;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#statement_font {
+  font-family: silkscreen;
+  font-size: 30px;
+  letter-spacing: -1px;
+  word-spacing: -5px;
+  line-height: -10;
+  z-index: 2;
+}
+
+#statement_title {
+font-family: silkscreen_bold;
+font-size: 35px;
+text-align: center;
+z-index: 2;
+}
+
+#statement_subtitle1 {
+font-family: silkscreen_bold;
+font-size: 31px;
+position: absolute;
+left: 30px;
+top: 110px;
+z-index: 2;
+}
+
+#info1 {
+  position: absolute;
+  left: 30px;
+  z-index: 2;
+}
+
+@font-face {
+  font-family: silkscreen;
+  src: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fslkscr.ttf?v=1606322638477);
+}
+
+@font-face {
+  font-family: silkscreen_bold;
+  src: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fslkscrb.ttf?v=1606675345185);
+}
+
+#box1 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fdialogue_box.png?v=1606323484490);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 720px;
+  height: 330px;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  z-index: 1;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#box2 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fdialogue_box2.png?v=1606677466322);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 720px;
+  height: 330px;
+  position: absolute;
+  left: 100px;
+  top: 410px;
+  z-index: 1;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+
+#final_door {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fdoor.png?v=1606601116103);
+  background-repeat: no-repeat;
+  background-size: 60px 80px;
+  width: 60px;
+  height: 80px;
+  position: absolute;
+  left: 500px;
+  top: 550px;
+  z-index: 1;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#message {
+ background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fenvelope.png?v=1606187358665);
+  background-repeat: no-repeat;
+  background-size: 40px 25px;
+  width: 40px;
+  height: 25px;
+  position: absolute;
+  left: 350px;
+  top: 300px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#message2 {
+ background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fenvelope.png?v=1606187358665);
+  background-repeat: no-repeat;
+  background-size: 40px 25px;
+  width: 40px;
+  height: 25px;
+  position: absolute;
+  left: 300px;
+  top: 200px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+
+#room_12 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fpixel1.jpg?v=1606767758508);
+  background-repeat: no-repeat;
+  background-size: 1200px 1200px;
+  width: 1200px;
+  height: 1200px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#can16 {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fpaperball.png?v=1606095254286);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 440px;
+  top: 580px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#snake {
+  background-image: url(https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fsnake.png?v=1606251545846);
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 440px;
+  top: 580px;
+  z-index: 3;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+#animatesnake {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+
+
+

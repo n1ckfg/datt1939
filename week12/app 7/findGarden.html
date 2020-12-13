@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find garden</title>
+    
+    
+    <link
+      href="https://fonts.googleapis.com/css?family=Crushed"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+        font-family: 'Crushed','monospace', 'san-serif';
+        font-size: 22px;
+      }
+
+      div#garden {
+        position: fixed;
+        bottom: 0px;
+        right: -352px;
+        /* background: white ; */
+        padding: 25px;
+        width: 300px;
+        height: 100px;
+        font-size: 50px;
+      }
+      .butterfly img {
+        width: 150px;
+        animation: butterfly 7s linear infinite;
+      }
+      .butterfly {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        bottom: -250px;
+      }
+
+      @keyframes butterfly {
+        0% {
+          transform: translateY(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        70% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-80vh);
+          opacity: 0;
+        }
+      }
+      .butterfly img:nth-child(1) {
+        animation-delay: 2s;
+        width: 35px;
+      }
+      .butterfly img:nth-child(2) {
+        animation-delay: 1s;
+        /* width: 50px; */
+      }
+      .butterfly img:nth-child(3) {
+        animation-delay: 3s;
+        /* width: 25px; */
+      }
+      .butterfly img:nth-child(4) {
+        animation-delay: 4.5s;
+        /* width: 30px; */
+      }
+      .butterfly img:nth-child(5) {
+        animation-delay: 3s;
+        /* width: 40px; */
+      }
+      .butterfly img:nth-child(6) {
+        animation-delay: 6s;
+        width: 35px;
+      }
+      .butterfly img:nth-child(7) {
+        animation-delay: 4.5s;
+        /* width: 45px; */
+      }
+    </style>
+    <script>
+      function yScrollHandler() {
+        var win = document.getElementById("garden");
+        if (
+          window.pageYOffset + window.innerHeight >=
+          document.body.offsetHeight
+        ) {
+          //win.style.webkitTransition = "right 0.7s ease-in-out 0s";
+          win.style.transition = "right 0.7s ease-in-out 0s";
+          win.style.right = "0px";
+        } else {
+          win.style.transition = "right 0.7s ease-in-out 0s";
+          win.style.right = "-452px";
+        }
+      }
+      window.onscroll = yScrollHandler;
+
+      var isMuted = false;
+      function mute_volume() {
+        let muteElement = document.getElementById("Audio");
+        muteElement.volume = 0;
+        isMuted = true;
+      }
+
+      function unmute_volume() {
+        let muteElement = document.getElementById("Audio");
+        muteElement.volume = 1.0;
+        isMuted = false;
+      }
+
+      function mutenomute() {
+        let muteElement = document.getElementById("Audio");
+        if (isMuted) {
+          unmute_volume();
+        } else {
+          mute_volume();
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <audio id="Audio" loop autoplay>
+      <source
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Faudio.mp3?v=1606865560191"
+        type="audio/mpeg"
+      />
+      <!-- Retro Game 01 by Miguel Ángel Zaragozá de León is licensed under CC - BY - 3.0 -->
+    </audio>
+    <div class="mbutton">
+      <button class="mutebutton" onclick="mutenomute()" type="button">
+        MUTE
+      </button>
+    </div>
+
+    <center>
+      <h1>You are almost there!</h1>
+
+      <p style="height:1600px; font-size:18px;">
+        But something is missing
+      </p>
+    </center>
+    <center>
+      <h2>Oh no! Timtim forgot flowers!</h2>
+      <p style="height:1600px; font-size:18px;">
+        Scroll to the bottom of the page to help Timtim find a garden &darr;
+      </p>
+    </center>
+
+    <a href="flower.html">
+      <div id="garden">
+        <img
+          src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fgrass.png?v=1606864024344"
+        />
+      </div>
+    </a>
+    <div class="butterfly">
+      <img
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fgolden.png?v=1607034053385"
+      />
+      <img
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fgolden1.png?v=1607034080999"
+      />
+      <img
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fgolden3.png?v=1607034096801"
+      />
+      <img
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fgolden1.png?v=1607034080999"
+      />
+      <img
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fgolden.png?v=1607034053385"
+      />
+      <img
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fgolden3.png?v=1607034096801"
+      />
+      <img
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fgolden1.png?v=1607034080999"
+      />
+    </div>
+  </body>
+</html>

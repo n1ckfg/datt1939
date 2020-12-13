@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Collect flowers!</title>
+<link
+      href="https://fonts.googleapis.com/css?family=Crushed"
+      rel="stylesheet"
+    />
+   
+    <!-- <link href='https://fonts.googleapis.com/css?family=Vollkorn SC' rel='stylesheet'> -->
+  
+    <style>
+      html {
+        box-sizing: border-box;
+        font-size: 10px;
+        background: #d3f09e;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+     
+         font-family: 'Crushed','monospace', 'san-serif';
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 10rem;
+        line-height: 1;
+        margin-bottom: 0;
+      }
+
+      .score {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0 3rem;
+        line-height: 1;
+        border-radius: 1rem;
+      }
+
+      .game {
+        width: 600px;
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+      }
+
+      .hole {
+        flex: 1 0 33.33%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .hole:after {
+        display: block;
+        background: url("https://cdn.glitch.com/10c291f2-1f7e-452f-a127-0954ff7a5656%2Fgrass.png?v=1606507318373) bottom center no-repeat");
+        background-size: contain;
+        content: "";
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        z-index: 2;
+        bottom: -30px;
+      }
+
+      .flower {
+        background: url("https://cdn.glitch.com/10c291f2-1f7e-452f-a127-0954ff7a5656%2Fflower.png?v=1606507419680")
+          bottom center no-repeat;
+        background-size: 40%;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s;
+      }
+
+      .hole.up .flower {
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>collect flower! <span class="score">0</span></h1>
+    <button onclick="startGame()">Start!</button>
+
+    <div class="game">
+      <div class="hole hole1">
+        <div class="flower"></div>
+      </div>
+      <div class="hole hole2">
+        <div class="flower"></div>
+      </div>
+      <div class="hole hole3">
+        <div class="flower"></div>
+      </div>
+      <div class="hole hole4">
+        <div class="flower"></div>
+      </div>
+      <div class="hole hole5">
+        <div class="flower"></div>
+      </div>
+      <div class="hole hole6">
+        <div class="flower"></div>
+      </div>
+    </div>
+
+     <script>
+      const holes = document.querySelectorAll(".hole");
+      const scoreBoard = document.querySelector(".score");
+      const flower = document.querySelectorAll(".flower");
+      let lastHole;
+      let timeUp = false;
+      let score = 0;
+
+      function randomTime(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      }
+
+      function randomHole(holes) {
+        const idx = Math.floor(Math.random() * holes.length);
+        const hole = holes[idx];
+        if (hole === lastHole) {
+          console.log("Ah nah thats the same one bud");
+          return randomHole(holes);
+        }
+        lastHole = hole;
+        return hole;
+      }
+
+      function peep() {
+        const time = randomTime(200, 1000);
+        const hole = randomHole(holes);
+        hole.classList.add("up");
+        setTimeout(() => {
+          hole.classList.remove("up");
+
+          if (!timeUp) peep();
+        }, time);
+      }
+
+      function startGame() {
+        scoreBoard.textContent = 0;
+        timeUp = false;
+        score = 0;
+        peep();
+        // setTimeout(() => timeUp = true, 10000)
+      }
+
+      function bonk(e) {
+        if (score > 3) {
+          window.location.href = "Congrats.html";
+          console.log("Next level.");
+        } else {
+          // (!e.isTrusted) return; // cheater!
+          score++;
+          this.parentNode.classList.remove("up");
+          scoreBoard.textContent = score;
+        }
+      }
+
+      flower.forEach(flower => flower.addEventListener("click", bonk));
+       
+       var isMuted = false;
+      function mute_volume() {
+        let muteElement = document.getElementById("Audio");
+        muteElement.volume = 0;
+        isMuted = true;
+      }
+
+      function unmute_volume() {
+        let muteElement = document.getElementById("Audio");
+        muteElement.volume = 1.0;
+        isMuted = false;
+      }
+
+      function mutenomute() {
+        let muteElement = document.getElementById("Audio");
+        if (isMuted) {
+          unmute_volume();
+        } else {
+          mute_volume();
+        }
+      }
+    </script>
+   <audio id="Audio" loop autoplay>
+      <source
+        src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Faudio.mp3?v=1606865560191"
+        type="audio/mpeg"
+      />
+      <!-- Retro Game 01 by Miguel Ángel Zaragozá de León is licensed under CC - BY - 3.0 -->
+    </audio>
+    <div class="mbutton">
+      <button class="mutebutton" onclick="mutenomute()" type="button">
+        MUTE
+      </button>
+    </div>
+  </body>
+</html>

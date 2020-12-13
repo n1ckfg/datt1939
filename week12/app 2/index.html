@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <style>
+      #video {
+        position:absolute;
+        left: 0px;
+        top: 30px;
+      }
+      
+      #button {
+        background: url("https://cdn.glitch.com/6785abf7-1c48-4f6d-9e08-9dcbe19dc2b9%2FUntitled-1.png?v=1606950225431");
+        background-size: contain;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 320px;
+        height: 240px;
+      }
+    </style>
+  </head>  
+  
+  <body>
+    <video id="video" src="https://cdn.glitch.com/6785abf7-1c48-4f6d-9e08-9dcbe19dc2b9%2Fcat%20plays%20theremin.mp4?v=1606949961991"></video>
+    
+    <div id="button"></div>
+    
+    <script>
+      let button = document.getElementById("button");
+      
+      let video = document.getElementById("video");
+      video.loop = true;
+      video.volume = 0;
+      video.play();
+      
+      let posX = 0;
+      let speed = 5;
+      
+      setInterval(function() {
+        button.style = "left:" + posX + "px;";
+        posX += speed;
+        if (posX < 0 || posX > 320) speed *= -1;
+      }, 1/60*1000);
+    </script>
+  </body>
+
+</html>

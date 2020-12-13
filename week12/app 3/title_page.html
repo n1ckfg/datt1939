@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css">
+
+</head>  
+  
+  <body style="background-color:#AEDAAA;">
+    
+    <div id="title">
+
+    </div> 
+     
+      
+    <!--startportal-->
+     <a href="#" onclick="window.location=chooseAURL(); return false;"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fportal.png?v=1606233110270" alt="portal" style="position:absolute; z-index: 1; left: 500px; top: 70px; height: 100px; image-rendering: pixelated; image-rendering: -moz-crisp-edges;image-rendering: crisp-edges;"></a>
+   
+    <!--statementportal-->
+   
+    <a href="statement.html"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fportal.png?v=1606233110270" alt="portal" style="position:absolute; z-index: 1; left: 100px; top: 70px; height: 100px; image-rendering: pixelated; image-rendering: -moz-crisp-edges;image-rendering: crisp-edges;"></a>
+    
+    <div id="character"> 
+      </div>
+  
+    <div id="room_index">
+    </div>
+
+    
+    
+    <!--can-->
+    <a href="#" onclick="grab(); return true;"><img id="can" src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcan.png?v=1606187353350" width="100" height="100" alt="can" style="position:absolute; image-rendering: pixelated; image-rendering: -moz-crisp-edges;image-rendering: crisp-edges;"></a>
+    
+    
+    
+    
+    
+    
+     <!--pools-->
+    <div class="pool" style="top:200px;left:200px;"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fgrime_pool.png?v=1606095254286"> </div>
+    
+    <div class="pool" style="top:300px;left:300px;"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fgrime_pool.png?v=1606095254286"> </div>
+    
+    <div class="pool" style="top:500px;left:250px;"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fgrime_pool.png?v=1606095254286"> </div>
+    
+    <div class="pool" style="top:250px;left:500px;"> <img src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fgrime_pool.png?v=1606095254286"> </div>
+  
+    
+    
+    
+    
+    <script>
+      
+      
+         "use strict";
+
+      
+      <!--can counter (use getCookie() instead of zero on sequential pages)
+      let canCounter = 0;
+
+      var pickupindexcan = ""; 
+      
+
+
+   <!--can counter functions-->
+    function setCookie() {
+      window.localStorage.setItem("cans", canCounter);
+    }
+
+    function getCookie() {  
+      return window.localStorage.getItem("cans");
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+    }
+      
+    function grab() {
+      pickupindexcan="yes";
+      can1.style = "display: none;"
+      canCounter++;
+      setCookie();  
+      console.log(getCookie());
+    }    
+      
+      <!--character let statements-->
+      let can1 = document.getElementById("can");
+     
+      let boundaryLeft = 30;
+      let boundaryTop = 30;
+      let boundaryRight = 630;
+      let boundaryBottom = 630;
+     
+      
+      let arrowUp = false;
+      let arrowDown = false;
+      let arrowLeft = false;
+      let arrowRight = false;
+      let spaceBar = false;
+              
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 38) arrowUp = true;
+        if (event.keyCode === 37) arrowLeft = true;
+        if (event.keyCode === 40) arrowDown = true;
+        if (event.keyCode === 39) arrowRight = true;
+        if (event.keyCode === 32) spaceBar = true;
+      });
+
+       window.addEventListener("keyup", function(event) {
+        if (event.keyCode === 38) arrowUp = false;
+        if (event.keyCode === 37) arrowLeft = false;
+        if (event.keyCode === 40) arrowDown = false;
+        if (event.keyCode === 39) arrowRight = false;
+         if (event.keyCode === 32) spaceBar = false;
+      });
+      
+      
+      <!--Character movement>
+      let body = document.getElementsByTagName("body")[0];
+      let character = document.getElementById("character");
+      
+       
+        setInterval(function() {
+       
+        let positionX = character.offsetLeft;
+        let positionY = character.offsetTop;
+        let characterBg = "";
+        
+        if (arrowRight) {
+          positionX += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_right.gif?v=1605722423846');";
+        } else if (arrowLeft) {
+          positionX -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_left.gif?v=1606005767787');";
+        } else if (arrowUp) {
+          positionY -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_up.gif?v=1605722904026');";
+        } else if (arrowDown) {
+          positionY += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_down.gif?v=1605722904027');";
+        }
+
+          
+          
+          <!--characterboundarys-->
+            if (positionX < boundaryLeft) {
+            positionX = boundaryLeft;
+          } else if (positionX > boundaryRight) {
+            positionX = boundaryRight;
+          }
+          if (positionY < boundaryTop) {
+            positionY = boundaryTop;
+          } else if (positionY > boundaryBottom) {
+            positionY = boundaryBottom;
+          }
+        
+          
+          <!--can grab if>
+              if (distance(positionX, positionY, can1.offsetLeft, can1.offsetTop) < 50) {
+           grab();
+         }
+          
+         <!--chacrater animation FINAL--> 
+        character.style = characterBg + "background-size: contain;" + "left: " + positionX + "px; top: " + positionY + "px;";
+      }, 1/30*1000);
+
+      
+      <!--portal random function-->
+        function randInt(low,high) {
+  return Math.floor(Math.random()*(high-low+1)+low);
+ }
+  
+      
+      function chooseAURL() {
+ 	var n = randInt(1,3);
+ 	var theRoom = "";
+  	if (n == 1) {
+  		theRoom = "page_2.html";
+  		}
+  	else if (n == 2) {
+  		theRoom = "page_3.html";
+  		}
+    else if (n == 3) {
+    	theRoom = "page_4.html";
+    	}
+    return theRoom;
+ }
+
+       </script>
+      
+    
+      </body>
+</html>

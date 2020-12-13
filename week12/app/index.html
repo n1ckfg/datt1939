@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>...</title>
+    <style>
+      body {
+        background: gray;
+      }
+      
+      #button {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        position: absolute; 
+        left: 10px;
+        top: 100px;
+      }
+      
+      #audio {
+        display: none;
+      }
+    </style>
+  </head>  
+  
+  <body>
+    <audio id="audio" src="https://cdn.glitch.com/70d7af40-87ed-4027-ae36-317757fdd4be%2Fcaracal_kitten.mp3?v=1606947734407"></audio>
+    
+    <div id="button"></div>
+    
+    <script>
+      let audio = document.getElementById("audio");
+      let button = document.getElementById("button");
+      
+      button.addEventListener("click", function() {
+        audio.play();
+      });
+    </script>
+  </body>
+  
+</html>

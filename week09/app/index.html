@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0px;
+        top: 200px;
+        background: blue;
+      }
+      
+      #ground {
+        width: 600px;
+        height: 20px;
+        position: absolute;
+        left: 0px;
+        top: 300px;
+        background: gray;
+      }
+    </style>
+  </head>  
+  <body>
+    <div id="box"></div>
+    <div id="ground"></div>
+    <script>
+      let gravity = 5;
+      let floor = 200;
+      let jumpCounter = 0;
+      let jumpCounterMax = 20;
+      
+      let arrowUp = arrowLeft = arrowRight = false;
+          
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 38) arrowUp = true;
+        if (event.keyCode === 37) arrowLeft = true;
+        if (event.keyCode === 39) arrowRight = true;
+        //console.log(event.keyCode);
+      });
+
+       window.addEventListener("keyup", function(event) {
+        if (event.keyCode === 38) arrowUp = false;
+        if (event.keyCode === 37) arrowLeft = false;
+        if (event.keyCode === 39) arrowRight = false;
+        //console.log(event.keyCode);
+      });
+      
+      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+      
+      let body = document.getElementsByTagName("body")[0];
+      let box = document.getElementById("box");
+      
+      setInterval(function() {        
+        let posX = box.offsetLeft;
+        let posY = box.offsetTop;
+
+        if (arrowRight) {
+          posX += 10;
+        } else if (arrowLeft) {
+          posX -= 10;
+        } 
+        
+        if (arrowUp && jumpCounter < jumpCounterMax) {
+          posY -= 10;
+          jumpCounter++;
+        }
+        
+        posY += gravity;
+        if (posY > floor) {
+          posY = floor;
+          jumpCounter = 0;
+        }
+        
+        box.style = "left: " + posX + "px; top: " + posY + "px;";
+      }, 1/60*1000);
+    </script>
+  </body>
+</html>

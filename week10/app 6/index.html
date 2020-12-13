@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title></title>
+
+    <style>
+      body {
+        background: gray;
+        color: black;
+        font-size: 18px;
+      }
+      
+      #scoreboard {
+        width: 100em;
+        height: 2em;
+        border: 1px solid black;
+        background: yellow;
+      }
+    </style>
+  </head>
+
+  <body>    
+    <div id="scoreboard"></div>
+    
+    <script>
+			let scoreboard = document.getElementById("scoreboard");
+
+      // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+			// The window.localStorage object now manages cookies for you, instead of using DIY methods.    
+			let points = window.localStorage.getItem("points");
+			points++;
+			scoreboard.innerHTML = points;
+			window.localStorage.setItem("points", points);
+    </script> 
+  </body>
+
+</html>
+
+

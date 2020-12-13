@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WONDER</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      table, th, td {
+        /*border: 1px solid black;*/
+        border-collapse: collapse;
+        padding: 2px 20px;
+        text-align: center;
+        position: relative;
+      }
+      #die_1_die_shape{
+        height: 100px;
+        width: 100px;
+        background: #F5F6CE;
+        border: 2px solid black;
+        text-align: center;
+        font-size: 100px;
+        font-family: Courier;
+      }
+      #die_2_die_shape{
+        height: 100px;
+        width: 100px;
+        background: #F5F6CE;
+        border: 2px solid black;
+        text-align: center;
+        font-size: 100px;
+        font-family: Courier;
+      }
+      #die_3_die_shape{
+        height: 100px;
+        width: 100px;
+        background: white;
+        border: 2px solid black;
+        text-align: center;
+        font-size: 100px;
+        font-family: Courier;
+      }
+      #die_4_die_shape{
+        height: 100px;
+        width: 100px;
+        background: white;
+        border: 2px solid black;
+        text-align: center;
+        font-size: 100px;
+        font-family: Courier;
+      }
+      #SCOREBOARD_3{
+        border: 2px solid black;
+        color: black;
+        width: 100px;
+        height: 20px;
+        background: #F3E2A9;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body style="background-color: #FACC2E" onload="update_SCOREBOARD(3)">
+    
+    <!BACKGROUND MUSIC>
+    <audio id="BGmusic" loop autoplay>
+    <source src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2FBACKGROUND_SOUND-WONDER.mp3?v=1606196568380" type="audio/mpeg">
+    </audio>
+    
+    <!MUTE BUTTON>
+    <div class="position_of_button">
+    <button class="mute_button_style" onclick="mute_or_unmute()" type="button">MUTE</button>
+    </div>
+    
+    <div class="TEXT_STYLE">
+      <h1>
+        FOUR FIVE NO SIX
+      </h1>
+      The rules of this game are very simple. We each take a turn rolling two dice,
+      but I take the first roll. If you roll a 4 and 5, you automatically win. 
+      If you roll a double and the other person does not, you win. If you roll a
+      bigger double than me, you win. If we both roll a non-double and you have the biggest
+      number, you wins. VICE VERSA!<br><br>
+      
+      <table>
+      <tr>
+          <th><div id="die_1_die_shape">0
+            
+            </div></th>
+          <th><div id="die_2_die_shape">0
+            
+            </div></th>
+          <th><div id="die_3_die_shape">0
+            
+            </div></th>
+          <th><div id="die_4_die_shape">0
+            
+            </div></th>
+        </tr>
+        <tr>
+          <td>DIE ONE</td>
+          <td>DIE TWO</td>
+          <td>DIE ONE</td>
+          <td>DIE TWO</td>
+        </tr>
+      </table>
+      
+    </div>
+    
+    <!PLAY BUTTON>
+    <div class="position_of_button_2">
+    <button class="play_button_style" onclick="alert(random_statements(FourFiveNoSix_game(),statements_1))" type="button">PLAY</button>
+    </div>
+    
+    <!BACK BUTTON>
+    <div class="position_of_button_3">
+    <button class="back_button_style" onclick="password_link('AREA_1.html','',true,'')" type="button">BACK</button>
+    </div>
+    
+    <!YOUR SCORE>
+    <div id="SCOREBOARD_3"></div>
+    
+    <script src="ALL_JAVASCRIPT.js">
+    </script>
+    
+  </body>
+
+</html>
+
+

@@ -1,0 +1,42 @@
+body {
+  background: gray;
+  padding: 0;
+  margin: 0;
+}
+#game{
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+}
+#character{
+  width: 20px;
+  height: 50px;
+  background: url("https://cdn.glitch.com/0ec04962-0f70-4b1d-a1a5-b1f45c39f95e%2Ffbb907ec-1cca-4667-bcf6-0c95b5ee2db2_chat%20noir.jpg?v=1605742065545");
+  background-size: contain;
+  position: relative;
+  top: 150px;
+}
+.animate{
+  animation: jump 500ms;
+}
+@keyframes jump{
+  0%{top:150px;}
+  30%{top:100px;}
+  70%{top:100px;}
+  100%{top:150px;}
+  
+  
+}
+#block{
+  width: 20px;
+  height: 20px;
+  background-color: #290;
+  position: relative;
+  top: 130px;
+  left: 480px;
+  animation: block 1s infinite linear;
+}
+@keyframes block{
+  0%{left: 480px;}
+  100%{left: -40px;}
+}

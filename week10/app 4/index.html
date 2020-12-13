@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet2" href="stylesheet2.css">
+		<style>
+			#container { 
+				position: relative;
+				width: 1000px;
+				margin:auto;
+			}
+			body {
+				background: pink;
+			}
+
+			.button {
+				width: 100px;
+				height: 50px;
+				position: absolute;
+			}
+
+			#buttonContinue {
+				left: 650px;
+				top: 220px;
+				border: 5px solid white;
+				border-radius: 25px;
+				background: pink;
+				text-align: center;
+				color:blue;
+			}
+
+			#buttonGood {
+				left: 350px;
+				top: 220px;
+				border: 5px solid white;
+				border-radius: 25px;
+				background: yellow;
+				text-align: center;
+				color:blue;
+			}
+
+			#buttonBad {
+				left: 50px;
+				top: 220px;
+				border: 5px solid white;
+				border-radius: 25px;
+				background: red;
+				text-align: center;
+				color:blue;
+			}
+
+			#textbox {
+				background:#FFFFFF;
+				color:#b66c85;
+				width: 500px;
+				height: 150px;
+				border: 5px pink;
+				border-radius: 25px;
+				margin:auto;
+				padding: 10px; 
+				text-align: center;
+				font-size: 40px;
+			}
+		</style>
+	</head> 
+
+	<body>
+		<div id="container">
+			<!-- click through text -->
+			<div class="button" id="buttonContinue">Continue</div>
+			<div id="textbox"></div>
+
+			<!--Activates at nextText10 -->
+			<div class="button" id="buttonGood">Good</div>
+			<div class="button" id="buttonBad">Bad</div>
+		</div>
+
+		<script>
+			let affection = 0;
+			let nextText = 0;
+			let answer ="";
+
+			let buttonContinue = document.getElementById("buttonContinue");
+			let textbox = document.getElementById("textbox");
+			let buttonContinueMessage = "";
+			let buttonContinueClicked =false;
+
+			let buttonGood = document.getElementById("buttonGood");
+			let buttonGoodClicked =false;
+
+			let buttonBad = document.getElementById("buttonBad");
+			let buttonBadClicked =false;
+
+			//only display continue button, remove it once choices are presented//
+			buttonContinue.style = "display: initial;";
+			buttonGood.style = "display: none;";    
+			buttonBad.style = "display: none;";
+
+			//if clicked
+			buttonContinue.addEventListener("click", function() {
+				console.log("Continue: " + nextText);
+				buttonContinueClicked = true;
+
+				switch (nextText) {
+					case 0:
+						buttonContinueMessage = "Well you're here";  
+						break;                   
+					case 1:
+						buttonContinueMessage = "And on time too";  
+						break;                                                 
+					case 2:
+						buttonContinueMessage = "I didn't know someone else is going to come over";                                  
+						break;
+					case 3:
+						buttonContinueMessage = "but the more the merrior I suppose";                                  
+						break;
+					case 4:
+						buttonContinueMessage = "We should chat while we wait for the others";                                  
+						break;
+					case 5:
+						buttonContinueMessage = "But it's going to be a bit weird to start wtihout a topic tho.... ";                                  
+						break;
+					case 6:
+						buttonContinueMessage="So! what do you like?"
+						break;
+					//ask user to input their prompt
+					case 7:
+						answer = prompt();
+						buttonContinueMessage="Nice, I like " + answer + " too!"
+						affection++;
+						break;
+					case 8:
+						buttonContinueMessage="soooo... hows life?"
+						break;
+					case 9:
+						buttonContinue.style="display:none;"
+						buttonGood.style="display: initial;"
+						buttonBad.style="display: initial;"
+						break;
+					case 10:
+						buttonContinue.style="display:initial;"
+						buttonGood.style="display: none;"
+						buttonBad.style="display: none;"
+						buttonContinueMessage="what happened?"
+						break;
+				}
+
+				textbox.innerHTML = buttonContinueMessage;  
+				nextText++;
+				if (nextText > 9999999999) nextText = 0;
+			});
+
+			buttonGood.addEventListener("click", function() {
+				console.log("Good: " + nextText);
+				buttonGoodClicked = true;
+
+				switch (nextText) {
+					case 10:
+						buttonContinueMessage="thats good"
+						nextText++;
+						affection++;				
+						break;
+				}
+				textbox.innerHTML = buttonContinueMessage;  
+			});
+
+			buttonBad.addEventListener("click", function() {
+				console.log("Bad: " + nextText);
+				buttonBadClicked = true;
+
+				switch (nextText) {
+					case 10:
+						buttonContinueMessage="thats bad"
+						nextText++;
+						break;
+				}
+				textbox.innerHTML = buttonContinueMessage;  
+			});
+
+			//story section
+			setInterval(function() {
+				if (buttonContinueClicked) {
+					// animation might go here?
+				}
+
+				if (buttonGoodClicked) {
+					// animation might go here?
+				}
+
+				if (buttonBadClicked) {
+					// animation might go here?
+				}
+			}, 1/60*1000);
+		</script>
+	</body>
+
+</html>

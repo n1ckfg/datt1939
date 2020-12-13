@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Welcome</title>       
+    
+    <style>
+     #background {
+       background-size: cover;
+       background-size: 1200px;
+      width: 1200px;
+      height: 750px;
+      background-image: url("https://cdn.glitch.com/ee56cd18-b93e-4eea-8ae3-833c1aa923c2%2Fsunset.png?v=1606250161952");
+      background-position: 0px 0px;
+      top: 0px;
+      left: 0px;
+      height: 680px;
+
+    }
+
+    #one {			
+			position: absolute;
+			top: 180px;
+			left: 470px;
+			width: 155px;
+      height: 125px;
+			padding: 0px;
+			background: transparent;
+			border-width: 2px;
+			border-style: transparent;
+		}
+    
+    #two {			
+			position: absolute;
+			top: 400px;
+			left: 100px;
+			width: 135px;
+      height: 105px;
+			padding: 0px;
+			background: transparent;
+			border-width: 2px;
+			border-style: transparent;
+		}
+      
+      #two:hover {
+        cursor:pointer;
+      }
+    
+     #three {			
+			position: absolute;
+			top: 550px;
+			left: 900px;
+			width: 135px;
+      height: 105px;
+			padding: 0px;
+			background: transparent;
+			border-width: 2px;
+			border-style: ridge;
+		}
+		
+		#four {
+				position: absolute;
+				top: 60px;
+				left: 650px;
+				width: 200px;
+				padding: 25px;
+				background-color: #ffccff;
+				border-color: aqua;
+				border-width: 5px;
+				border-style: outset;
+			}	
+  
+      #canvas1 {
+        width: 400px;
+        height: 225px;
+        background: url("https://cdn.glitch.com/ee56cd18-b93e-4eea-8ae3-833c1aa923c2%2F62455-shout-factory1.jpg?v=1606243542588");
+        background-size: contain;
+      }
+  
+  </style>
+  </head>  
+
+  <body>
+<div id="background">
+    </div>
+    
+ 
+       
+   
+    
+    <div id="two">
+  <img src="https://cdn.glitch.com/ee56cd18-b93e-4eea-8ae3-833c1aa923c2%2Fgirl.png?v=1606262794332" alt="Girl" width="210" height="130"> 
+    </div>
+    
+
+    <div id="one" onclick="location.href='2_page.html';" style="cursor: pointer;">
+    </div>
+    
+
+ <div id="three"><a href="8_page.html">
+  <img src="https://cdn.glitch.com/ee56cd18-b93e-4eea-8ae3-833c1aa923c2%2Fimages.png?v=1606450124542" alt="message_in_bottle" width="210" height="130"> 
+      
+  </a>
+    </div>   
+
+      <canvas id="canvas1"></canvas>
+         
+    <script>
+      function question1() {    
+        var question1 = prompt('Do you want to visit the mystery girl?');
+
+        if(question1.toLowerCase() == 'yes') 
+        {
+          alert('Ok, be CAUTIOUS!!');
+        }
+        else if(question1.toLowerCase() == 'no') 
+        {
+          alert('Run.....back to where you were!!');
+        }
+        else
+        {
+          alert('Maybe soon');
+        }   
+      }      
+      
+      let two = document.getElementById("two");
+      two.addEventListener("click", question1);
+      
+      // scratch-off effect
+      let canvas = document.getElementById("canvas1");
+      let ctx = canvas.getContext("2d");
+            
+      let mouseX = 0;
+      let mouseY = 0;
+      let mouseIsPressed = false;
+            
+      let brushSize = 20;
+          
+      canvas.addEventListener("mousemove", function(e) { 
+        let rect = canvas.getBoundingClientRect(); 
+        mouseX = Math.round(e.clientX - rect.left) * (canvas.width / rect.width);   
+        mouseY = Math.round(e.clientY - rect.top) * (canvas.height / rect.height);   
+      });
+      
+      canvas.addEventListener("mousedown", function(e) {
+        mouseIsPressed = true;
+      });
+      
+      document.addEventListener("mouseup", function(e) {
+        mouseIsPressed = false;
+      });
+      
+      ctx.beginPath();
+      ctx.fillStyle = "black";
+      ctx.rect(0, 0, canvas.width, canvas.height);
+      ctx.fill();
+      
+      setInterval(function() {
+        if (mouseIsPressed) {
+          ctx.clearRect(mouseX - (brushSize/2), mouseY - (brushSize/2), brushSize, brushSize);
+        }       
+      }, (1/60)*1000);
+    </script>  
+  </body>
+  
+</html>

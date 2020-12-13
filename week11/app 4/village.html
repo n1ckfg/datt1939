@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <body style="background-color:#9ADBED;">
+      <style>
+
+          .ground {
+
+            /*width: 100%;
+            height: 50%;*/
+            width: 100%;
+            height: 20%;
+            background: #27D721;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 100%;
+          }
+
+          .greenhedge {
+
+            background-image: url("https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Fhedge.png?v=1606431364024");
+            background-size: 20%;
+            background-repeat: repeat-x;
+            width: 100%;
+            height: 42%;
+            position: absolute;
+            bottom: 0%;
+            left: 0%;
+            right: 100%;
+
+          }
+
+          .brownhouse {
+
+            width: 35%;
+            position: absolute;
+            bottom: 20%;
+            left: -5%;
+          }
+
+          .brownhouse:hover{
+
+            width: 36%;
+          }
+
+          .redhouse {
+
+            width: 20%;
+            position: absolute;
+            bottom: 75%;
+            left: 33%;
+          }
+
+          .redhouse:hover {
+
+            width: 21%;
+          }
+
+          .yellowhouse {
+
+            width: 20%;
+            position: absolute;
+            bottom: 75%;
+            left: 47%;
+            transform: rotateY(180deg);
+          }
+
+          .yellowhouse:hover {
+
+            width: 21%;
+          }
+
+          .bluehouse {
+
+            width: 35%;
+            position: absolute;
+            bottom: 20%;
+            left: 70%;
+            transform: rotateY(180deg);
+          }
+
+          .bluehouse:hover {
+
+          width: 36%;
+          }
+
+          .purplehouse {
+
+            width: 30%;
+            position: absolute;
+            bottom: 45%;
+            left: 15%;
+          }
+
+          .purplehouse:hover {
+
+            width: 31%;
+          }
+
+          .orangehouse {
+
+            width: 30%;
+            position: absolute;
+            bottom: 45%;
+            left: 55%;
+            transform: rotateY(180deg);
+          }
+
+          .orangehouse:hover {
+
+            width: 31%;
+          }
+
+          .blondvillager {
+
+            width: 20%;
+            position: absolute;
+            bottom: 0%;
+          }
+
+        .blondvillager:hover {
+          
+          cursor: pointer;
+        }
+        
+        
+            .cloud{
+          position: absolute;
+          left: 0;
+          background: white;
+          border-radius: 1000px;
+          animation: sail 60s infinite linear;
+        }
+
+        .cloud.one{
+          top: 15%;
+          width: 125px;
+          height: 50px;
+          animation-duration: 160s;
+          animation-delay: -80s;
+        }
+
+        .cloud.two{
+          top: 10%;
+          width: 100px;
+          height: 25px;
+          animation-duration: 220s;
+          animation-delay: -60s;
+        }
+
+        .cloud.three{
+          top: 25%;
+          width: 30px;
+          height: 10px;
+          animation-duration: 340s;
+          animation-delay: -20s;
+        }
+
+        .cloud.four{
+          top: 35%;
+          width: 120px;
+          height: 45px;
+          animation-duration: 200s;
+          animation-delay: -60s;
+        }
+
+        .cloud.five{
+          top: 20%;
+          width: 45px;
+          height: 15px;
+          animation-duration: 340s;
+          animation-delay: -260s;
+        }
+
+        .cloud.six{
+          top: 5%;
+          width: 150px;
+          height: 20px;
+          animation-duration: 340s;
+          animation-delay: -200s;
+        }
+
+        .cloud.seven{
+          top: 30%;
+          width: 120px;
+          height: 45px;
+          animation-duration: 200s;
+          animation-delay: -180s;
+        }
+
+        @keyframes sail{
+          from {
+            left: 0;
+            transform: translateX(-100%);
+          }
+          to {
+            left: 100%;
+            transform: translateX(0%);
+          }
+          
+      </style>
+
+      <!CLOUDS>
+      <div class="cloud one"></div>
+      <div class="cloud two"></div>
+      <div class="cloud three"></div>
+      <div class="cloud four"></div>
+      <div class="cloud five"></div>
+      <div class="cloud six"></div>
+      <div class="cloud seven"></div>
+
+      <div class="greenhedge"></div>
+
+      <div class="ground">
+        <img
+          src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Fyellowhouse.png?v=1606424605437"
+          alt="yellow house"
+          class="yellowhouse"
+        />
+        <img
+          src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Forangehouse.png?v=1606432503755"
+          alt="orange house"
+          class="orangehouse"
+        />
+        <img
+          src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Fredhouse.png?v=1606423209749"
+          alt="red house"
+          class="redhouse"
+        />
+        <img
+          src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Fpurplehouse.png?v=1606432350166"
+          alt="purple house"
+          class="purplehouse"
+        />
+        <img
+          src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Fhousemock.png?v=1606419740051"
+          alt="brown house"
+          class="brownhouse"
+        />
+        <img
+          src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Fbluehouse.png?v=1606425722815"
+          alt="blue house"
+          class="bluehouse"
+        />
+        <img
+          src="https://cdn.glitch.com/938da876-2909-4948-bdd9-65d91ccb1fd2%2Fvillager1.gif?v=1606442437432"
+          alt="blond villager"
+          class="blondvillager"
+          onclick="alert('Welcome to my village!'), alert('eeeeee')"
+          }
+        />
+      </div>
+      
+    </body>
+
+    <script>
+    
+      
+  
+    </script>
+  </head>
+</html>

@@ -1,0 +1,141 @@
+ 
+   <html>
+  <head>
+   
+    
+    <link rel="stylesheet" href="/style.css">
+    
+    
+    
+    
+    
+  </head>  
+   <body style="background-color:#AEDAAA;">
+   
+        <h1>
+       PAGE 12
+    </h1>
+     
+      
+    
+    <div id="character12"> 
+      </div>
+  
+    <div id="room_12">
+    </div>
+
+
+     
+     
+     <script>
+       
+            
+         "use strict";
+
+      
+      <!--can counter (use getCookie() instead of zero on sequential pages)
+      let canCounter = getCookie();
+
+      var pickupindexcan = ""; 
+      
+
+       
+       
+      function setCookie() {
+      window.localStorage.setItem("cans", canCounter);
+    }
+
+    function getCookie() {  
+      return window.localStorage.getItem("cans");
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+    }
+  
+      
+      <!--character let statements-->
+      
+     
+      let boundaryLeft = 30;
+      let boundaryTop = 30;
+      let boundaryRight = 960;
+      let boundaryBottom = 940;
+     
+      
+      let arrowUp = false;
+      let arrowDown = false;
+      let arrowLeft = false;
+      let arrowRight = false;
+      let spaceBar = false;
+              
+    window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 87) arrowUp = true;
+        if (event.keyCode === 65) arrowLeft = true;
+        if (event.keyCode === 83) arrowDown = true;
+        if (event.keyCode === 68) arrowRight = true;
+        if (event.keyCode === 32) spaceBar = true;
+      });
+
+       window.addEventListener("keyup", function(event) {
+        if (event.keyCode === 87) arrowUp = false;
+        if (event.keyCode === 65) arrowLeft = false;
+        if (event.keyCode === 83) arrowDown = false;
+        if (event.keyCode === 68) arrowRight = false;
+         if (event.keyCode === 32) spaceBar = false;
+      });
+      
+      
+      <!--Character movement>
+      let body = document.getElementsByTagName("body")[0];
+      let character12 = document.getElementById("character12");
+      
+       
+        setInterval(function() {
+       
+        let positionX = character12.offsetLeft;
+        let positionY = character12.offsetTop;
+        let characterBg = "";
+        
+        if (arrowRight) {
+          positionX += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_right.gif?v=1605722423846');";
+        } else if (arrowLeft) {
+          positionX -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_left.gif?v=1606005767787');";
+        } else if (arrowUp) {
+          positionY -= 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_up.gif?v=1605722904026');";
+        } else if (arrowDown) {
+          positionY += 5;
+          characterBg = "background: url('https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Fcharacter_down.gif?v=1605722904027');";
+        }
+
+          
+          
+          <!--characterboundarys-->
+            if (positionX < boundaryLeft) {
+            positionX = boundaryLeft;
+          } else if (positionX > boundaryRight) {
+            positionX = boundaryRight;
+          }
+          if (positionY < boundaryTop) {
+            positionY = boundaryTop;
+          } else if (positionY > boundaryBottom) {
+            positionY = boundaryBottom;
+          }
+        
+          
+          
+         <!--chacrater animation FINAL--> 
+        character12.style = characterBg + "background-size: contain;" + "left: " + positionX + "px; top: " + positionY + "px;";
+      }, 1/30*1000);
+
+      
+  
+   
+       </script>
+      
+       
+  </body>
+</html>

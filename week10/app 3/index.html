@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background: gray;
+        font-size: 18px;
+      }
+      
+      .button {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+      
+      #button1 {
+        left: 0px;
+        top: 0px;
+        background: red;
+      }
+      
+      #button2 {
+        left: 300px;
+        top: 0px;
+        background: blue;
+      }
+      
+      #textbox {
+        width: 200em;
+        height: 2em;
+        border: 1px solid red;
+        position: absolute;
+        left: 0px;
+        top: 200px;
+      }
+    </style>
+  </head>  
+  <body>
+    <div class="button" id="button1"></div>
+    <div class="button" id="button2"></div>
+    <div id="textbox"></div>
+
+    <script>
+      let gameMode = 0;
+      
+      let button1 = document.getElementById("button1");
+      let button2 = document.getElementById("button2");
+      let textbox = document.getElementById("textbox");
+      
+      let button1Message, button2Message;
+      let button1Clicked = button2Clicked = false;
+      
+      function resetTextbox() {
+        setTimeout(function() {
+          textbox.innerHTML = "";
+        }, 1000);
+      }
+      
+      button1.addEventListener("click", function() {
+        textbox.innerHTML = button1Message;  
+        button1Clicked = true;
+        resetTextbox();
+      });
+      
+      button2.addEventListener("click", function() {
+        textbox.innerHTML = button2Message;
+        button2Clicked = true;
+        resetTextbox();
+      });
+      
+      setInterval(function() {
+        if (button1Clicked && button2Clicked) {
+          gameMode++;
+          if (gameMode > 2) gameMode = 0;
+          console.log("Gamemode: " + gameMode);
+          button1Clicked = button2Clicked = false;
+        }
+        
+        if (gameMode == 0) {
+          button1Message = "asdfasfasdf";
+          button2Message = "One<br>two<br>three";                   
+        } else if (gameMode == 1) {
+          button1Message = "@#$@#$@";                   
+          button2Message = "!!!!!!!";                   
+        } else if (gameMode == 2) {
+          button1Message = "aaaaaaaaaaa";                   
+          button2Message = "ssssssss";                   
+        }
+      }, 1/60*1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>intro</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Crushed"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-image: radial-gradient(#490000 0%, #000000 74%);
+      }
+
+      /* .saveme {
+  display: none
+ } */
+
+      /* .title:hover .saveme {
+  display: inline-block;
+  text-align:center;
+}
+.title {
+  font-size: 100px;
+  color: snow;
+  text-align: center;
+  padding-right: 40px;
+  font-family:  'Nosifer', cursive;
+} */
+
+      .image {
+        position: relative;
+        width: 400px;
+      }
+
+      .garden {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+
+      .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
+         font-family: 'Crushed','monospace', 'san-serif';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+
+      .image-title {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .image-description {
+        font-size: 1.25em;
+        margin-top: 0.25em;
+      }
+
+      .image-overlay > * {
+        transform: translateY(20px);
+        transition: transform 0.25s;
+      }
+
+      .image-overlay:hover {
+        opacity: 1;
+      }
+
+      .image-overlay:hover > * {
+        transform: translateY(0);
+      }
+
+      /* img2 */
+
+      .image2 {
+        position: relative;
+        width: 400px;
+      }
+
+      .car {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+
+      .image-overlay2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
+        font-family: 'Crushed','monospace', 'san-serif';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+
+      .image-title2 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .image-description2 {
+        font-size: 1.25em;
+        margin-top: 0.25em;
+      }
+
+      .image-overlay2 > * {
+        transform: translateY(20px);
+        transition: transform 0.25s;
+      }
+
+      .image-overlay2:hover {
+        opacity: 1;
+      }
+
+      .image-overlay2:hover > * {
+        transform: translateY(0);
+      }
+
+      /* img: 3 */
+
+      .image3 {
+        position: relative;
+        width: 400px;
+      }
+
+      .fakesmile {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+
+      .image-overlay3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: #ffffff;
+        font-family: 'Crushed','monospace', 'san-serif';
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+
+      .image-title3 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .image-description3 {
+        font-size: 1.25em;
+        margin-top: 0.25em;
+      }
+
+      .image-overlay3 > * {
+        transform: translateY(20px);
+        transition: transform 0.25s;
+      }
+
+      .image-overlay3:hover {
+        opacity: 1;
+      }
+
+      .image-overlay3:hover > * {
+        transform: translateY(0);
+      }
+
+      .imagecontainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        cursor: pointer;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    
+      <div class="timtim">
+        <a href="index.html">
+          <img
+            src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Ficons8-back-64.png?v=1607084258793"
+          />
+        </a>
+      </div>
+
+    
+        <div class="imagecontainer">
+          <div class="image">
+            <a href="flower.html">
+              <img
+                class="garden"
+                src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fmap1.jpg?v=1607005219246"
+                alt="garden"
+                style="height: 823; width: 423;"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Find Flowers</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="image2">
+            <a href="cargame.html">
+              <img
+                class="car"
+                src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fmap2.jpg?v=1607005212523"
+                alt="garden"
+                style="height: 823; width: 423;"
+              />
+              <div class="image-overlay2">
+                <div class="image-title">Drive to reach CeCe</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="image3">
+            <a href="closet.html">
+              <img
+                class="fakesmile"
+                src="https://cdn.glitch.com/3d19ac36-4a6a-4f87-a5d6-c2dac247d213%2Fmap3.jpg?v=1607005211329"
+                alt="garden"
+                style="height: 823; width: 423;"
+              />
+              <div class="image-overlay3">
+                <div class="image-title3">Help TimTim get ready</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

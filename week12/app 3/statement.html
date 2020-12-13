@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>STATEMENT</title>
+    
+    <link rel="stylesheet" href="/style.css">
+    
+    <style>
+      #arrow2 {
+        background: url("https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Farrow.png?v=1606679855132");
+        background-size: contain;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100px;
+        height: 100px;
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+      }
+    </style>
+  </head>  
+  <body id= "statement_font" style="background-color:#86c06c;">
+    <div id= "title2"> 
+    </div>
+    <div>
+      <a href= "index.html">
+        <img id= "arrow"
+            src="https://cdn.glitch.com/e2d8bbd2-734e-42ef-9405-900a95c0b215%2Farrow.png?v=1606679855132"
+            alt="Go Back"
+        />
+      </a>
+    </div>
+    <div id= "box1">
+    <br> <br>
+    <p id= "statement_title">
+      STATEMENT
+      </p>
+      <p id= "statement_subtitle1">
+        Columns
+      </p>
+    <p id= "info1">
+      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
+    </p>
+    </div>
+    
+    <div id= "box2">
+    </div>
+
+    <div id="arrow2"></div>
+    
+    <script>
+      let arrow2 = document.getElementById("arrow2");
+      let info1 = document.getElementById('info1');
+      let counter = 0;
+      
+      arrow2.addEventListener("click", function() {
+        counter++;
+        if (counter > 2) counter = 0;
+        
+        switch(counter) {
+          case 0:
+            info1.innerHTML = "<b>EEEEE</b>eeee";
+            break;
+          case 1:
+            info1.innerHTML = "<b>EEAAAAEE</b>eeee";
+            break;
+          case 2:
+            info1.innerHTML = "<b>EEEdddddddEE</b>eeee";
+            break;            
+        }
+      });
+    </script>
+  </body>
+</html>

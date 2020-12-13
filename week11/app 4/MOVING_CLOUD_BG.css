@@ -1,0 +1,83 @@
+#cloudcontainer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.cloud{
+  position: inherit; 
+  z-index: inherit;
+  left: 0;
+  background: white;
+  border-radius: 1000px;
+  animation: sail 60s infinite linear;
+}
+
+.cloud.one{
+  top: 15%; 
+  width: 125px;
+  height: 50px;
+  animation-duration: 160s;
+  animation-delay: -80s;
+}
+
+.cloud.two{
+  top: 10%; 
+  width: 100px;
+  height: 25px;
+  animation-duration: 220s;
+  animation-delay: -60s;
+}
+
+.cloud.three{
+  top: 25%; 
+  width: 30px;
+  height: 10px;
+  animation-duration: 340s;
+  animation-delay: -20s;
+}
+
+.cloud.four{
+  top: 35%; 
+  width: 120px;
+  height: 45px;
+  animation-duration: 200s;
+  animation-delay: -60s;
+}
+
+.cloud.five{
+  top: 20%; 
+  width: 45px;
+  height: 15px;
+  animation-duration: 340s;
+  animation-delay: -260s;
+}
+
+.cloud.six{
+  top: 5%; 
+  width: 150px;
+  height: 20px;
+  animation-duration: 340s;
+  animation-delay: -200s;
+}
+
+.cloud.seven{
+  top: 30%; 
+  width: 120px;
+  height: 45px;
+  animation-duration: 200s;
+  animation-delay: -180s;
+}
+
+@keyframes sail{
+  from { 
+    left: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    left: 100%;
+    transform: translateX(0%); 
+  }
+}
